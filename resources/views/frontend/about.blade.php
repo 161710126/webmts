@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('content')
-<section class="about-us-hero">
+<!-- <section class="about-us-hero">
 			<div class="container">
 				<div class="hero-content">						
 					<div class="hero-caption">
@@ -9,7 +9,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		
 		<section class="dcare__counterup__area section-padding--lg bg-image--6">	
 			<div class="container">
@@ -93,13 +93,16 @@
 					<div class="col-md-12 col-lg-5 col-sm-12">
 						<div class="welcome__juniro__three">
 							<div class="welcome-tab nav" role="tablist">
-	                            <a class="nav-item nav-link active" data-toggle="tab" href="#mission" role="tab">Mission</a>
-                                <a class="nav-item nav-link" data-toggle="tab" href="#vission" role="tab">Vision</a>
+                                <a class="nav-item nav-link active" data-toggle="tab" href="#vission" role="tab">Vision</a>
+	                            <a class="nav-item nav-link " data-toggle="tab" href="#mission" role="tab">Mission</a>
                                 <a class="nav-item nav-link" data-toggle="tab" href="#object" role="tab">Tujuan</a>
                     		</div>
 							<div class="welcome__tab__content">
 								<!-- Start Single Content -->
-								<div class="single__welcome__content tab-pane fade show active" id="mission" role="tabpanel">
+								<div class="single__welcome__content tab-pane fade show active" id="vission" role="tabpanel">
+									<p style="font-size: 17px; line-height:33px;">Meningkatkan Prestasi Siswa dalam bidang Imtek dan imtaq serta berakhlakul Karimah.</p>
+								</div>
+								<div class="single__welcome__content tab-pane fade" id="mission" role="tabpanel">
 									<p style="font-size: 17px; line-height:33px;">1.Melaksanakan pembelajaran dan bimbingan secara efektif untuk mengoptimalkan potensi siswa<br>
                            2.Mengciptakan suasana yang kondusif untuk keefektipan seluruh kegiatan madrasah<br>
                            3.Mengembangkan budaya kompeletif bagi peningkatan prestasi siswa<br>
@@ -107,9 +110,6 @@
 								</div>
 								<!-- End Single Content -->
 								<!-- Start Single Content -->
-								<div class="single__welcome__content tab-pane fade" id="vission" role="tabpanel">
-									<p style="font-size: 17px; line-height:33px;">Meningkatkan Prestasi Siswa dalam bidang Imtek dan imtaq serta berakhlakul Karimah.</p>
-								</div>
 								<!-- End Single Content -->
 								<!-- Start Single Content -->
 								<div class="single__welcome__content tab-pane fade" id="object" role="tabpanel">
@@ -126,7 +126,7 @@
 					</div>
 				</div>
 				<div class="welcome__images wow fadeInUp" data-wow-delay="0.5s">
-					<img src="{{asset('assets/baru/images/logo/bcmts.jpg')}}" style="width: 800px; height: 400px;" alt="welcome images">
+					<img src="{{asset('assets/baru/images/logo/bcmts.jpg')}}" style="width: 800px; height: 450px;" alt="welcome images">
 				</div>
 				
 			</div>
@@ -139,19 +139,19 @@
 						<div class="testimonial__slide--3 owl-carousel owl-theme">
 							<!-- Start Single Testimonial Area -->
 							@foreach($testimonis as $data)
-							<div class="testimonial--3">
-								<div class="testimonial__thumb">
-									<img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="clint images">
-								</div>
-								<div class="testimonial__content">
-									<p>{{$data->content}}.</p>
-									<div class="tes__info">
-										<h6>{{$data->nama}}</h6>
-										<span>{{$data->angkatan}}</span>
-									</div>
-								</div>
-							</div>
-							@endforeach
+              <div class="testimonial--3">
+                <div class="testimonial__thumb">
+                  <img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="clint images">
+                </div>
+                <div class="testimonial__content">
+                  <p style="color: black;">{{$data->content}}.</p>
+                  <div class="tes__info">
+                    <h6 style="color: black;">{{$data->nama}}</h6>
+                    <span style="color: black;">{{$data->angkatan}}</span>
+                  </div>
+                </div>
+              </div>
+              @endforeach
 							<!-- End Single Testimonial Area -->
 							<!-- Start Single Testimonial Area -->
 							

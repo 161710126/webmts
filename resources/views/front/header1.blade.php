@@ -29,7 +29,7 @@
                     <div class="row d-none d-lg-flex">
                         <div class="col-sm-4 col-md-6 col-lg-2 order-1 order-lg-1">
                             <div class="logo">
-                                <a href="/beranda">
+                                <a href="/">
                                     <img src="{{asset('assets/baru/images/logo/log.png')}}" style="width: 80px;" alt="logo images">
                                 </a>
                             </div>

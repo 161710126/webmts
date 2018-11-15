@@ -25,9 +25,9 @@
               <thead>
 			  		<tr>
 			  		<th>No</th>
+			  		<th>Nama</th>
 					  <th>Poto</th>
 			  		 <th>Nama Kategori</th>
-					
 					  <th colspan="2">Action</th>
 			  		</tr>
 				  	</thead>
@@ -36,6 +36,7 @@
 				  		@foreach($galeriss as $data)
 				  	  <tr>
 				  	  <td>{{ $no++ }}</td>
+				  	  <td>{{$data->nama}}</td>
 				    	<td><p><a href="" class="thumbnail">
 								<img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 100px; height: 50px;"></p></td>
 				    	<td>{{ $data->Kategorigaleri->nama_kategori}}</td>

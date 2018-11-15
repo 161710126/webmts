@@ -37,7 +37,7 @@
 				  	  <tr>
 				  	    <td>{{ $no++ }}</td>
 				    	<td>{{ $data->judul}}</td>
-				    	<td>{!! $data->content !!}</td>
+				    	<td>{!! str_limit($data->content, 100, '&raquo;') !!}</td>
 				    	<td><img src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" style="max-height: 125px;max-width: 125px;margin-top: 7px"></td>
 						
 				    	<td>{{ $data->user->name}}</td>

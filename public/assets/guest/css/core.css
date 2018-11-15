@@ -1134,7 +1134,7 @@ img.aligncenter {
     display: block;
   }
   .logo a img {
-    box-shadow: 2px 11px 16px rgba(0, 0, 0, 0.8);
+   
   }
 }
 @media (max-width: 991px) {

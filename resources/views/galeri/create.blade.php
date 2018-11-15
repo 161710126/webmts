@@ -13,6 +13,13 @@
 		<form action="{{ route('galeris.store') }}" method="post"  enctype="multipart/form-data">
 			{{ csrf_field() }}
 			
+			<div class="form-group {{$errors->has('nama') ? 'has-error' : '' }}">
+				<label class="control-label">Nama</label>
+				<input type="text"  name="nama" class="form-control" required>
+				@if ($errors->has('nama'))
+				<span class="help-block"><strong>{{ $errors->first('nama') }}</strong></span>
+				@endif
+			</div>
 
 			 <div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">Nama Kategori</label>	

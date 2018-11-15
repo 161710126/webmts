@@ -1,19 +1,28 @@
 @extends('layouts.index')
 @section('content')
-<section class="schedule-hero">
-			<div class="container">
-				<div class="hero-content">						
-					<div class="hero-caption">
-						<h2>Ekstrakurikuler</h2>
-						
-					</div>
-				</div>
-			</div>
-		</section>
+<div class="ht__bradcaump__area">
+            <div class="ht__bradcaump__container">
+             <!--  <img src="{{asset('assets/baru/images/bg-png/6.png')}}" alt="bradcaump images"> -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bradcaump__inner text-center">
+                                <h2 class="bradcaump-title">Ekstrakurikuler</h2>
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
+                                  <span class="breadcrumb-item active">Ekstrakurikuler</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 		 <center><header class="section-header">
           <h2>Pengertian Ekstrakurikuler</h2>
-           <p>Ekstrakurikuler adalah kegiatan non-pelajaran formal yang dilakukan peserta didik sekolah atau universitas, umumnya di luar jam belajar kurikulum standar. <br>Kegiatan-kegiatan ini ada pada setiap jenjang pendidikan dari sekolah dasar sampai universitas.</p>
+           <p style="font-size: 17px;">Ekstrakurikuler adalah kegiatan non-pelajaran formal yang dilakukan peserta didik sekolah atau universitas, umumnya di luar jam belajar kurikulum standar. <br>Kegiatan-kegiatan ini ada pada setiap jenjang pendidikan dari sekolah dasar sampai universitas.</p>
         </header></center>
 		
 		<div class="container">
@@ -31,7 +40,7 @@
                </center>
               </div>
               <h2 class="title">{{ $data->nama}}</h2>
-              <p>
+              <p style="font-size: 17px;">
               {{ $data->content}}
               </p>
             </div>
@@ -39,17 +48,36 @@
 						@endforeach
 			</div>
 			</div>
-
-			<section class="academics-hero">
+			<br>
+			<!-- <section class="academics-hero">
 			<div class="container">
 				<div class="hero-content">						
 					<div class="hero-caption">
 						<h2>Prestasi Siswa-Siswi MTs AL IKHLAS</h2>
-						<!-- <a href="#" class="hvr-push">Download as PDF</a> -->
+						<a href="#" class="hvr-push">Download as PDF</a>
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
+			<div class="ht__bradcaump__area">
+            <div class="ht__bradcaump__container">
+             <!--  <img src="{{asset('assets/baru/images/bg-png/6.png')}}" alt="bradcaump images"> -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bradcaump__inner text-center">
+                                <h2 class="bradcaump-title">Prestasi Siswa/i MTs AL IKHLAS</h2>
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
+                                  <span class="breadcrumb-item active">Prestasi</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 		
 		<!-- <section class="events-search-filter">
 			<div class="container">

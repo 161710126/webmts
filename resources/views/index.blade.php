@@ -1,21 +1,51 @@
 	@extends('layouts.index')
 	@section('content')
-		<section class="hero-3">
-			<div class="container">
-				<div class="row">
-					<div class="hero-content">
-						<div class="hero-caption col-sm-7 col-md-7">
-							<h2> <span>MTs AL-IKHLAS KEBAN</span></h2>
-							<p>Mari kita pikirkan pendidikan sebagai sarana untuk mengembangkan kemampuan terbesar kita, karena di masing-masing kita ada harapan dan impian pribadi yang terpenuhi, dapat diterjemahkan menjadi manfaat bagi semua orang dan kekuatan yang lebih besar bagi bangsa kita. (John F. Kennedy)</p>
-							<a href="/" class="action-btn hvr-push">Read More</a>
-						</div>
-						<div class="hero-img col-sm-5 col-md-5">
-							<img src="{{asset('assets/guest/images/teacher-2.png')}}" alt="image">
+		<div class="slide__carosel owl-carousel owl-theme">
+			<div class="slider__area slider--four bg-image--19 d-flex slider__fixed--height justify-content-start align-items-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="slider__activation">
+								<!-- Start Single Slide -->
+								<div class="slide">
+									<div class="slide__inner">
+										<!-- <h6><span class="color-pink">He</span><span class="secondary-color">llo</span> Kidz <span class="separator">,</span></h6> -->
+										<h1 style="color: black;">PPDB MTs AL IKHLAS</h1>
+										<p style="color: black; font-size: 20px">MTs AL IKHLAS menerima pendaftaran siswa/i baru .....</p>
+										<div class="slider__btn">
+											<a class="dcare__btn btn__org max__height-btn hover--theme" href="#">Daftar Sekarang</a>
+										</div>
+									</div>
+								</div>
+								<!-- End Single Slide -->
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+			<div class="slider__area slider--four bg-image--19 d-flex slider__fixed--height justify-content-start align-items-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="slider__activation">
+								<!-- Start Single Slide -->
+								<div class="slide">
+									<div class="slide__inner">
+										<!-- <h6><span class="color-pink">He</span><span class="secondary-color">llo</span> Kidz <span class="separator">,</span></h6> -->
+										<h1 style="color: black;">Selamat Datang di situs<br>Resmi MTs AL IKHLAS</h1>
+										<p style="color: black; font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+										<div class="slider__btn">
+											<a class="dcare__btn btn__org max__height-btn hover--theme" href="#">Read More</a>
+										</div>
+									</div>
+								</div>
+								<!-- End Single Slide -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		
 		<!-- <section class="header-3-navigation">
 			<div class="container">
@@ -69,7 +99,7 @@ Motto MTs AL IKHLAS KEBAN II adalah Educative, Creative, Unity. Selain mendidik 
 			</div>
 		</section>
 		
-		<section class="featured-box white-bg">
+		<!-- <section class="featured-box white-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4 col-md-4">
@@ -92,6 +122,49 @@ Motto MTs AL IKHLAS KEBAN II adalah Educative, Creative, Unity. Selain mendidik 
 								Daftar <span>Guru</span>
 							</a>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+
+			@php
+		$artikels = App\Artikel::paginate(4);
+		@endphp
+		<section class="featured-news">
+			<div class="container">
+				<div class="row">
+					<div class="section-header">
+						<h2 style="margin-left: 500px;">Berita Terkini</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="section-content">
+					@foreach($artikels as $data)
+						<div class="col-xs-6 col-md-3">
+							<div class="news-item">
+								<div class="item-meta-data">
+									<div class="col-md-8">
+										<a href="/blog/{{$data->slug}}"><img src="{{asset('assets/guest/images/logo1.png')}}" style="width: 25px; height: 25px;"  alt="image"></a>
+										<a href="/blog/{{$data->slug}}"><span>{{ $data->user->name}}</span></a>
+									</div>
+									<div class="col-md-4">
+										<span>{{$data->created_at->diffForHumans()}}</span>
+									</div>
+								</div>
+								<div class="item-image">
+									<a href="/blog/{{$data->slug}}">
+										<img src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" alt="image">
+									</a>
+								</div>
+								<div class="item-info">
+									<h3><a href="/blog/{{$data->slug}}">{{$data->judul}}</a></h3>
+									<p>{!! str_limit($data->content, 100, '&raquo;') !!}.</p>
+									<a href="/blog/{{$data->slug}}">Read More</a>
+								</div>
+							</div>
+						</div>
+						@endforeach
+					  <a style="margin-left: 500px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/blog">Lihat Semua Berita & Artikel Kami</a>
 					</div>
 				</div>
 			</div>
@@ -2153,48 +2226,7 @@ memiliki jiwa tanggap terhadap iptek</p>
 			</div>
 		</section>
 		
-		@php
-		$artikels = App\Artikel::all();
-		@endphp
-		<section class="featured-news">
-			<div class="container">
-				<div class="row">
-					<div class="section-header">
-						<center><h2>Berita Terkini</h2></center>
-					</div>
-				</div>
-				<div class="row">
-					<div class="section-content">
-					@foreach($artikels as $data)
-						<div class="col-xs-6 col-md-3">
-							<div class="news-item">
-								<div class="item-meta-data">
-									<div class="col-md-8">
-										<a href="/blog/{{$data->slug}}"><img src="{{asset('assets/guest/images/logo1.png')}}" style="width: 25px; height: 25px;"  alt="image"></a>
-										<a href="/blog/{{$data->slug}}"><span>{{ $data->user->name}}</span></a>
-									</div>
-									<div class="col-md-4">
-										<span>{{$data->created_at->diffForHumans()}}</span>
-									</div>
-								</div>
-								<div class="item-image">
-									<a href="/blog/{{$data->slug}}">
-										<img src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" alt="image">
-									</a>
-								</div>
-								<div class="item-info">
-									<h3><a href="/blog/{{$data->slug}}">{{$data->judul}}</a></h3>
-									<p>{!! str_limit($data->content, 100, '&raquo;') !!}.</p>
-									<a href="/blog/{{$data->slug}}">Read More</a>
-								</div>
-							</div>
-						</div>
-						@endforeach
-						<button  class="btn btn-warning" style="margin-left: 500px;"><a href="blog"> Lihat Selengkapnya</a></button>
-					</div>
-				</div>
-			</div>
-		</section>
+	
 		
 		
 		
@@ -2221,6 +2253,7 @@ memiliki jiwa tanggap terhadap iptek</p>
     $testimonis = App\Testimoni::all();
     @endphp
 		<section class="dcare__testimonial__area section-padding--lg bg-image--23">
+    <center><h1>Testimoni Alumni</h1></center>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-lg-12">
@@ -2232,10 +2265,10 @@ memiliki jiwa tanggap terhadap iptek</p>
 									<img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="clint images">
 								</div>
 								<div class="testimonial__content">
-									<p>{{$data->content}}.</p>
+									<p style="color: black;">{{$data->content}}.</p>
 									<div class="tes__info">
-										<h6>{{$data->nama}}</h6>
-										<span>{{$data->angkatan}}</span>
+										<h6 style="color: black;">{{$data->nama}}</h6>
+										<span style="color: black;">{{$data->angkatan}}</span>
 									</div>
 								</div>
 							</div>

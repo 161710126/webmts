@@ -1,39 +1,82 @@
 @extends('layouts.index')
 @section('content')
-<section class="news-single-hero">
-			<div class="container">
-				<div class="hero-content">						
-					<div class="hero-caption">
-						<h2>{{ $artikels->judul}}</h2>
-						<h2>Penulis : {{ $artikels->user->name}}</h2>
-						<h2> <i class="fa fa-calendar"></i> <!-- {{$artikels->created_at->diffForHumans()}} --> {{ date('M j, Y', strtotime($artikels->created_at)) }}</h2>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- <section class="news-single-meta">
-			<div class="container">
-				<div class="row">
-					<p>Published in <a href="#">Student Article</a>, <a href="#">Design</a></p>
-					<p>August, 15th 2016 <a href="#comments">2 Comments</a></p>
-				</div>
-			</div>
-		</section> -->
-				
+ <div class="ht__bradcaump__area">
+            <div class="ht__bradcaump__container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bradcaump__inner text-center">
+                                <h2 class="bradcaump-title">Blog Details</h2>
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                 <!--  <span class="brd-separetor"><img src="images/icons/brad.png" alt="separator images"></span> -->
+                                  <span class="breadcrumb-item active">Blog Details</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Bradcaump area -->
+        <!-- Start Blog Grid Area -->
+        <div class="dcare__blog__list bg--white section-padding--lg">
+        	<div class="container">
+        		<div class="row">
+        			<!-- Start BLog Details -->
+        			<div class="col-lg-9">
+        				<div class="page__blog__details">
+        					<article class="dacre__blog__details">
+        						<div class="blog__thumb">
+        							<img src="{{ asset ('assets/img/gambargaleri/'.$artikels->gambar) }}" alt="blog images">
+        						</div>
+        						<div class="blog__inner">
+        							<h2>{{ $artikels->judul}}</h2>
+        							<ul>
+        								<li>Penulis : {{ $artikels->user->name}}</li>
+        								<li>{{ date('M j, Y', strtotime($artikels->created_at)) }}</li>
+        								<!-- <li><a href="#">Comments : 05</a></li>
+        								<li><a href="#">Like : 07</a></li> -->
+        							</ul>
 
-		<section class="news-single-content">
-			<div class="container">
-				<div class="row">
-				<div class="news-single-full-image">
-			<img src="{{ asset ('assets/img/gambargaleri/'.$artikels->gambar) }}" alt="image">
-		</div>
-					<div class="section-content">
-						<p>{!! $artikels->content !!}.</p>
-					</div>
-				</div>
+        							<p>{!! $artikels->content !!}.</p>
 
-				<div class="navigation-area">
+        							
+        						</div>
+        					</article>
+
+        					<div class="blog__page__btn">
+        						<div class="blog__share">
+        							<span>Share By:</span>
+        							<ul class="dacre__social__link--2 bg--2 d-flex justify-content-end">
+										<li class="facebook"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-facebook"></i></a></li>
+										<li class="twitter"><a target="_blank" href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-twitter"></i></a></li>
+										<li class="pinterest"><a target="_blank" href="https://www.plus.google.com/sharer?url={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-google-plus"></i></a></li>
+									</ul>
+        						</div>
+        					</div>
+							
+							<!-- Start Blog Author -->
+							<!-- <div class="blog__author text-center">
+								<div class="author__thumb">
+									<img src="images/blog/author/1.png" alt="author images">
+								</div>
+								<div class="author__info">
+									<span>February  13,  2018</span>
+									<h6><span>Author :</span> Robart Hanson</h6>
+									<p>Loxcepteur sint  occaecat cupidatat non prdent, suntw in culpa qui officia deserunt molli aLorem ipsum dolor sitamet, cadipisicinelit, sed do eiusmod.</p>
+									<ul class="dacre__social__link--2 bg--2 d-flex justify-content-center">
+										<li class="facebook"><a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+										<li class="twitter"><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+										<li class="vimeo"><a target="_blank" href="https://www.vimeo.com/"><i class="fa fa-vimeo"></i></a></li>
+										<li class="pinterest"><a target="_blank" href="https://pinterest.com/"><i class="fa fa-pinterest"></i></a></li>
+									</ul>
+								</div>
+							</div> -->
+							<!-- End Blog Author -->
+
+							<!-- prev next -->
+							<div class="navigation-area">
 								<div class="row">
 								@if(isset($previous))
 									<div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
@@ -64,54 +107,11 @@
 									</div>	
 									 @endif								
 								</div>
-							</div>
-			
-			<div class="container">
-			<div class="row">
-				<div class="section-footer">
-					<div class="news-share">
-						<h3>Share Via Social</h3>
-						<ul>
-					<li>
-						<a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
-						<i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a>
-					</li>
+							</div><br>
+							<!-- End prev next -->
 
-					<li>
-						<a href="https://www.plus.google.com/sharer?url={{ urlencode(Request::fullUrl()) }}">
-						<i class="fa fa-google-plus fa-3x" aria-hidden="true"></i></a>
-					</li>
-						
-					<li>
-						<a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-						<i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
-					</li>
-
-					<li>
-						<a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-						<i class="fa fa-whatsapp fa-3x" aria-hidden="true"></i></a>
-					</li>
-							</ul>
-						</div>
-						<!-- <div class="news-author">
-							<div class="row">
-								<div class="col-xs-2">
-									<a href="#">
-										<img src="{{asset('assets/guest/images/jun.jpg')}}" alt="image">
-									</a>
-								</div>
-								<div class="col-xs-10">
-									<h3>Article By <a href="#">M Junika Berli</a></h3>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl</p>
-								</div>
-							</div>
-						</div> -->
-					</div>
-				</div>
-			</div>
-			
-		
-		<div id="disqus_thread"></div>
+							<!-- Start Blog Comment -->
+							<div id="disqus_thread"></div>
 <script>
 
 /**
@@ -131,7 +131,48 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+							<!-- End Blog Comment -->
 
-</div>
-</section>
+
+							<!-- Start Comment Form -->
+							<!-- <div class="commentfield">
+								<h4 class="title__line--3">Leave A Reply</h4>
+								<form action="#">
+									<div class="row">
+
+										<div class="col-md-6 col-lg-6 col-sm-6 col-12">
+											<div class="single__input__box">											
+												<input type="text" id="name" placeholder="Name">
+											</div>
+										</div>
+
+										<div class="col-md-6 col-lg-6 col-sm-6 col-12 xs-mt-30">
+											<div class="single__input__box">												
+												<input type="email" id="email" placeholder="E-mail">
+											</div>
+										</div>
+
+										<div class="col-md-12 col-lg-12 col-sm-12 col-12">
+											<div class="single__input__box">											
+												<textarea name="message" id="message" placeholder="Type your message here.."></textarea>
+											</div>
+											<div class="submit__btn">
+												<a class="dcare__btn" href="#">submit</a>
+											</div>
+										</div>
+
+									</div>
+								</form>
+							</div> -->
+							<!-- End Comment Form -->
+
+        				</div>
+        			</div>
+        			<!-- End BLog Details -->
+        			<!-- Start Sidebar -->
+        			@include('blog.side')
+        			<!-- End Sidebar -->
+        		</div>
+        	</div>
+        </div>
 @endsection

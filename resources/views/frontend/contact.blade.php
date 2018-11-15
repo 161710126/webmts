@@ -1,14 +1,24 @@
 @extends('layouts.index')
 @section('content')
-<section class="contact-hero">
-			<div class="container">
-				<div class="hero-content">						
-					<div class="hero-caption">
-						<h2>Silakan Hubungi Kami</h2>
-					</div>
-				</div>
-			</div>
-		</section>
+<div class="ht__bradcaump__area">
+            <div class="ht__bradcaump__container">
+             <!--  <img src="{{asset('assets/baru/images/bg-png/6.png')}}" alt="bradcaump images"> -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bradcaump__inner text-center">
+                                <h2 class="bradcaump-title">Silakan Hubungi Kami</h2>
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
+                                  <span class="breadcrumb-item active">Kontak Informasi</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 		
 		<section class="contact-form">
 			<div class="container">

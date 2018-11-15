@@ -55,6 +55,7 @@ class GaleryController extends Controller
     {
         Alert::success('Data successfully Saved','Good Job')->persistent(1300);
          $this->validate($request,[
+            'nama' => 'required|',
             // 'poto' => 'required|',
             'kategori_id' => 'required|'
              // 'kategorigaleri_id' => 'required|'
@@ -62,6 +63,7 @@ class GaleryController extends Controller
         ]);
 
         $galeriss = new galeri;
+        $galeriss->nama = $request->nama;
          if ($request->hasFile('poto')){
             $file=$request->file('poto');
             $destinationPath=public_path().'/assets/img/gambarweb/';
@@ -113,12 +115,14 @@ class GaleryController extends Controller
     {
         Alert::success('Data successfully Changed','Good Job')->persistent(1300);
          $this->validate($request,[
+            'nama' => 'required|',
              'poto' => 'required|',
               'kategori_id' => 'required|'
              
            
         ]);
         $galeriss=galeri::findOrFail($id);
+        $galeriss->nama = $request->nama;
         if ($request->hasFile('poto')) {
             $file = $request->file('poto');
             $destinationPath = public_path().'/assets/img/gambarweb/';

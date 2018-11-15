@@ -4,7 +4,6 @@
 
 <div class="ht__bradcaump__area">
             <div class="ht__bradcaump__container">
-            	
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -30,7 +29,7 @@
 						<div class="gallery__menu">
                             <button data-filter="*"  class="is-checked">All</button>
                             @foreach($kategori as $data)
-                            <button data-filter=".web{{$data->id}}">{{$data->nama_kategori}}</button>
+                            <button style="margin-bottom: 20px; margin-left: 10px;" data-filter=".web{{$data->id}}">{{$data->nama_kategori}}</button>
                             @endforeach
                       	</div>
 					</div>
@@ -42,13 +41,13 @@
 						<div class="gallery">
 							<div class="gallery__thumb">
 								<a href="#">
-									<img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="gallery images">
+									<img style="margin-left: 15px; width: 550px; height: 400px;" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="gallery images">
 								</a>
 							</div>
 							<div class="gallery__hover__inner">
 								<div class="gallery__hover__action">
 									<ul class="gallery__zoom">
-										<li><a href="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" data-lightbox="grportimg" data-title="My caption"><i class="fa fa-search"></i></a></li>
+										<li><a href="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" data-lightbox="grportimg" data-title="{{$data->nama}}"><i class="fa fa-search"></i></a></li>
 										
 									</ul>
 								</div>

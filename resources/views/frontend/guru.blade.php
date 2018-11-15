@@ -1,14 +1,24 @@
 @extends('layouts.index')
 @section('content')
-<section class="events-hero">
-			<div class="container">
-				<div class="hero-content">						
-					<div class="hero-caption">
-						<h2>Kumpulan Dewan Guru</h2>
-					</div>
-				</div>
-			</div>
-		</section>
+<div class="ht__bradcaump__area">
+            <div class="ht__bradcaump__container">
+             <!--  <img src="{{asset('assets/baru/images/bg-png/6.png')}}" alt="bradcaump images"> -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bradcaump__inner text-center">
+                                <h2 class="bradcaump-title">Kumpulan Guru MTs AL IKHLAS</h2>
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
+                                  <span class="breadcrumb-item active">Guru</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 		
 		<!-- <section class="events-search-filter">
 			<div class="container">

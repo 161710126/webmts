@@ -8,7 +8,7 @@ class galeri extends Model
 
    {
       protected $table = 'galeris';
-     protected $fillable = ['poto','kategori_id'];
+     protected $fillable = ['nama','poto','kategori_id'];
      public $timestamps = true;
 
       public function Kategorigaleri()

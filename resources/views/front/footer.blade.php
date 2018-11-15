@@ -1,4 +1,4 @@
-<footer id="colophon" class="site-footer">
+<!-- <footer id="colophon" class="site-footer">
 			<div class="footer-info">
 				<div class="container">
 					<div class="row">
@@ -66,6 +66,28 @@
 				<div class="container">
 					<div class="row">
 						<p style="margin-left: 450px;">Copyright 2018 | Admin MTs AL IKHLAS</p>
+					</div>
+				</div>
+			</div>
+		</footer> -->
+		<footer id="colophon" class="site-footer">
+			<div class="copyright">
+				<div class="container">
+					<div class="row align-items-center copyright__wrapper">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="coppy__right__inner">
+								<a href="/beranda"><p>Copyright 2018 | Admin MTs AL IKHLAS</p></a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="ftr__social__icon">
+								<ul class="dacre__social__link d-flex justify-content-center justify-content-md-end justify-content-lg-end">
+									<li class="facebook"><a target="_blank" href="https://www.facebook.com/mtsalikhlas.kebanii"><i class="fa fa-facebook"></i></a></li>
+									<li class="twitter"><a target="_blank" href="https://twitter.com/MtsKeban"><i class="fa fa-twitter"></i></a></li>
+									<li class="vimeo"><a target="_blank" href="https://www.instagram.com/wargamtsalikhlaskeban2/"><i class="fa fa-instagram"></i></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

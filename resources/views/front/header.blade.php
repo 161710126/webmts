@@ -45,10 +45,10 @@
 								<ul class="nav navbar-nav">
 									<li><a href="/beranda">Beranda</a></li>
 									<li><a href="/about">Profil</a></li>
-									<li><a href="/fasilitas">Fasilitas</a></li>
 									<li><a href="/guru">Guru</a></li>
 									<li><a href="/blog">Berita</a></li>
 									<li><a href="/eskulprestasi">Ekstrakurikuler</a></li>
+									<li><a href="/fasilitas">Fasilitas</a></li>
 									<li><a href="/galeri">Galery</a></li>
 									<li><a href="/contact">Kontak</a></li>
 								</ul>

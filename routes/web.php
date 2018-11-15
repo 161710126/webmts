@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/beranda', function () {
+Route::get('/', function () {
     return view('index');
 });
 

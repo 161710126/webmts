@@ -13,7 +13,16 @@
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}  
 			  		
-
+        			<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
+			  			<label class="control-label">Nama</label>	
+			  			<input type="text" name="nama" class="form-control" value="{{ $fasilitas->nama }}"  required>
+			  			@if ($errors->has('nama'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('nama') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+        			
 	                 <div class="form-group">
                         <label for="cc-payment" class="control-label mb-1">poto</label>
                 			@if (isset($galeriss) && $galeriss->poto)

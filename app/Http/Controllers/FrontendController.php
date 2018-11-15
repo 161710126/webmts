@@ -19,7 +19,7 @@ class FrontendController extends Controller
 {
     public function beranda()
     {   
-        $artikels = Artikel::all();
+        $artikels = Artikel::paginate(4);
         $galeriss = galeri::paginate(5);
         $testimonis = Testimoni::all();
     	return view('index',compact('artikels','galeriss','testimonis'));
@@ -43,10 +43,12 @@ class FrontendController extends Controller
         return view('Prestasi.index',compact('prestasis'));
     }
 
-     public function artikel()
+     public function artikel(Request $request)
     {
-        $artikels = Artikel::all();
-        return view('blog.home',compact('artikels'));
+         $search = $request->get('search');
+        $a = Artikel::where('judul','LIKE','%'.$search.'%')->orderBy('created_at','desc')->paginate(2);
+        $artikels = Artikel::paginate(2);
+        return view('blog.home',compact('artikels','a','search'));
     }
 
     public function show(Artikel $artikels)
@@ -57,11 +59,11 @@ class FrontendController extends Controller
         return view('blog.show',compact('artikels','previous','next'));
     }
 
-    // public function artikelkategori(Kategori $kategori)
-    // {
-    //     $artikels = $kategori->Artikel()->latest()->paginate(5);
-    //     return view('blog.blog-home', compact('artikels'));
-    // }
+    public function artikelkategori(Kategori $kategori)
+    {
+        $artikels = $kategori->Artikel()->latest()->paginate(5);
+        return view('blog.home', compact('artikels'));
+    }
 
     public function fasilitas()
     {
