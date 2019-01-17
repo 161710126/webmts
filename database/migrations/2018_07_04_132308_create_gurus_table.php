@@ -18,6 +18,10 @@ class CreateGurusTable extends Migration
             $table->string('nama');
             $table->string('jabatan');
             $table->string('poto');
+            $table->string('alamat');
+            $table->string('j_kelamin');
+            $table->string('telepon');
+            $table->string('status');
             $table->timestamps();
         });
     }

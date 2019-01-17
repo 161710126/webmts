@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -12,12 +12,30 @@
 <div class="row">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @include('sweet::alert')
-	<div class="container"><center><h2>DATA ARTIKEL</h2></center>
+	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
+
+			 <div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title">Data Artikel</h4>
+                            </li>
+                            <li class="breadcrumb-item bcrumb-1">
+                                <a href="/home">
+                                    <i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 			    <div class="card mb-3">
         <div class="card-header">
-        <div class="card-body"> <a class="btn btn-warning" href="{{ route('artikels.create') }}">Add Data</a>
+        <div class="card-body"> <a class="btn btn-outline-warning" href="{{ route('artikels.create') }}">Add Data</a>
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
@@ -58,6 +76,19 @@
                                 </button>
 							</form>
 						</td>
+						<td>
+                  @if($data->status == 1)
+                  <form action="{{ route('artikels.publish',$data->id) }}" method="post">
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-outline-success">UnPublish</button>
+                  </form>
+                  @elseif($data->status == 0)
+                  <form action="{{ route('artikels.publish',$data->id) }}" method="post">
+                    {{ csrf_field() }}
+                    <button class="btn btn-outline-success" type="submit">Publish</button>
+                  </form>
+                </td>
+                @endif
 				      </tr>
 
 				      @endforeach	

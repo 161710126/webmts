@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sekolah | MTs AL IKHLAS</title>
+    <title>MTs AL IKHLAS || KEBAN II</title>
 
      <!-- Favicons -->
   <link href="{{ asset('assets/guest/images/logo1.png') }}" rel="icon">

@@ -36,7 +36,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data successfully Saved','Good Job')->persistent(1300);
+        Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
          $this->validate($request,[
             'nama' => 'required|unique:contacts',
             'email' => 'required|max:255',
@@ -98,7 +98,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        Alert::success('Data successfully Deleted','Good Job')->persistent(1300);
+        Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
         $kontaks = contact::findOrFail($id);
          $kontaks->delete();
         return redirect()->route('kontaks.index');  

@@ -40,7 +40,7 @@
               
                <li class="nav-item">
                 <a href="{{Route('artikels.index')}}" class="nav-link">
-                  <i class="fa fa-newspaper-o"></i>
+                  <i class="fa fa-server"></i>
                   <p>Artikel</p>
                 </a>
               </li>
@@ -78,6 +78,12 @@
                 <a href="{{Route('prestasis.index')}}" class="nav-link">
                   <i class="fa fa-graduation-cap"></i>
                   <p>Prestasi</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="{{Route('events.index')}}" class="nav-link">
+                  <i class="fa fa-graduation-cap"></i>
+                  <p>Agenda</p>
                 </a>
               </li>
                <li class="nav-item">

@@ -1,7 +1,5 @@
 @extends('layouts.index')
 @section('content')
-
-
 <div class="ht__bradcaump__area">
             <div class="ht__bradcaump__container">
                 <div class="container">
@@ -10,7 +8,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Gallery-MTs AL IKHLAS</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <a class="breadcrumb-item" href="/">Home</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Gallery</span>
                                 </nav>
@@ -41,7 +39,7 @@
 						<div class="gallery">
 							<div class="gallery__thumb">
 								<a href="#">
-									<img style="margin-left: 15px; width: 550px; height: 400px;" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="gallery images">
+									<img  style="width: 450px; height: 300px;" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="gallery images">
 								</a>
 							</div>
 							<div class="gallery__hover__inner">

@@ -9,7 +9,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Silakan Hubungi Kami</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <a class="breadcrumb-item" href="/">Home</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Kontak Informasi</span>
                                 </nav>

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -12,10 +12,28 @@
 <div class="row">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @include('sweet::alert')
-    <div class="container"><center><h2>DATA Kategori Artikel</h2></center>
+    <div class="container">
         <div class="col-md-12">
             <div class="panel panel-primary">
-                <div class="card mb-3">
+
+             <div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title">Data Kategori Artikel</h4>
+                            </li>
+                            <li class="breadcrumb-item bcrumb-1">
+                                <a href="/home">
+                                    <i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        <div class="card mb-3">
         <div class="card-header">
           
         <div class="card-body"> <a class="btn btn-outline-warning" href="{{ route('kategori.create') }}"><i class="fa fa-plus-square">&nbsp</i>Add Data</a>

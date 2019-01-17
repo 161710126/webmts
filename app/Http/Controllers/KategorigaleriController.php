@@ -38,7 +38,7 @@ class KategorigaleriController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data successfully Saved','Good Job')->persistent(1300);
+        Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
        $this->validate($request,[
            'nama_kategori' => 'required|max:255'
             //  'content' => 'required|',
@@ -47,7 +47,7 @@ class KategorigaleriController extends Controller
             //  'user_id' => 'required|max:255'
         ]);
         // {
-        //     Alert::error('Sorry your data is invalid, Please try again!', 'Oops!')->persistent("Ok");
+        //     Alert::error('Sorry your data is invalid, Please try again!', 'Oops!')->autoclose("7k");
         //     return back()->withErrors($validation)->withInput();
         // }
 
@@ -98,7 +98,7 @@ class KategorigaleriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Alert::success('Data successfully Changed','Good Job')->persistent(1300);
+        Alert::success('Data successfully Changed','Good Job')->autoclose(1700);
        $this->validate($request,[
            'nama_kategori' => 'required|max:255'
             //  'content' => 'required|',
@@ -122,7 +122,7 @@ class KategorigaleriController extends Controller
      */
     public function destroy($id)
     {
-        Alert::success('Data successfully Deleted','Good Job')->persistent(1300);
+        Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
         $kategori = Kategorigaleri::findOrFail($id);
         $kategori->delete();
         return redirect()->route('kategoris.index');   

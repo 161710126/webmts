@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -14,9 +14,23 @@
 @include('sweet::alert')
 	<div class="container">
 		<div class="col-md-12">
+		<div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title">Data Testimoni Alumni</h4>
+                            </li>
+                            <li class="breadcrumb-item bcrumb-1">
+                                <a href="/home">
+                                    <i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 		<div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Testimoni</div>
         <div class="card-body"><a class="btn btn-outline-warning" href="{{ route('testimonis.create') }}"><i class="fa fa-plus-square">&nbsp</i>Tambah</a>
 
           <div class="table-responsive">
@@ -37,7 +51,7 @@
 				  	  <tr>
 				  	  <td>{{ $no++ }}</td>
 				    	<td>{{ $data->nama}}</td>
-				    	<td><img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
+				    	<td><img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
 				    	<td>{{ $data->angkatan}}</td>
 				    	<td>{{ $data->content}}</td>
 						<td>

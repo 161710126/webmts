@@ -76,7 +76,7 @@
 					<div class="row align-items-center copyright__wrapper">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="coppy__right__inner">
-								<a href="/beranda"><p>Copyright 2018 | Admin MTs AL IKHLAS</p></a>
+								<a href="/beranda"><center><p style="margin-left: 300px;">Copyright 2018 | Admin MTs AL IKHLAS</p></center></a>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">

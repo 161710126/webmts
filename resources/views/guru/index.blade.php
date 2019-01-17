@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -16,6 +16,23 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			   
+			    <div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title">Data Guru</h4>
+                            </li>
+                            <li class="breadcrumb-item bcrumb-1">
+                                <a href="/home">
+                                    <i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
 			    <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i> Data Table Guru</div>
@@ -29,6 +46,10 @@
 			  		<th>No</th>
 			  		  <th>Nama</th>
 					  <th>Jabatan</th>
+					  <th>Alamat</th>
+					  <th>Jenis Kelamin</th>
+					  <th>Telepon</th>
+					  <th>Status</th>
 					  <th>Poto</th>
 					  <th colspan="2">Action</th>
 			  		</tr>
@@ -40,7 +61,11 @@
 				  	  	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->nama}}</td>
 						<td><p>{{ $data->jabatan }}</p></td>
-						<td><img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
+						<td>{{ $data->alamat}}</td>
+						<td>{{ $data->j_kelamin}}</td>
+						<td>{{ $data->telepon}}</td>
+						<td>{{ $data->status}}</td>
+						<td><img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
 						<td>
 							<a href="{{ route('gurus.edit',$data->id) }}" class="btn btn-outline-primary"><i class="fa fa-pencil-square-o">&nbsp</i>Edit</a>
 						</td>

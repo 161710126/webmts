@@ -26,7 +26,7 @@ class GuruController extends Controller
     public function create()
     {
         return view('guru.create');  
-           }
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,11 +36,15 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data Successfully Saved', 'Good Job!')->autoclose(1300);
+        Alert::success('Data Successfully Saved', 'Good Job!')->autoclose(1700);
          $this->validate($request,[
              'nama' => 'required|unique:gurus|',
             //'nama' => 'required|max:255',
-            'jabatan' => 'required|min:2'
+            'jabatan' => 'required|',
+            'alamat' => 'required|',
+            'j_kelamin' => 'required|min:2',
+            'telepon' => 'required|',
+            'status' => 'required|min:2'
              
         ]);
 
@@ -55,7 +59,10 @@ class GuruController extends Controller
             $uploadSuccess= $file->move($destinationPath,$filename);
             $gurus->poto= $filename;
         }
-
+        $gurus->alamat = $request->alamat;
+        $gurus->j_kelamin = $request->j_kelamin;
+        $gurus->telepon = $request->telepon;
+        $gurus->status = $request->status;
         $gurus->save();
         return redirect()->route('gurus.index');  
            }
@@ -93,11 +100,14 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Alert::success('Data Successfully Changed', 'Good Job!')->autoclose(1300);
+        Alert::success('Data Successfully Changed', 'Good Job!')->autoclose(1700);
         $this->validate($request,[
              'nama' => 'required|max:255',
-            'jabatan' => 'required|min:2'
-             
+             'jabatan' => 'required|',
+             'alamat' => 'required|',
+             'j_kelamin' => 'required|min:2',
+             'telepon' => 'required|',
+             'status' => 'required|min:2'
             
         ]);
 
@@ -124,6 +134,10 @@ class GuruController extends Controller
         }
         $gurus->poto = $filename;
 }
+        $gurus->alamat = $request->alamat;
+        $gurus->j_kelamin = $request->j_kelamin;
+        $gurus->telepon = $request->telepon;
+        $gurus->status = $request->status;
         $gurus->save();
         return redirect()->route('gurus.index'); 
               }
@@ -148,7 +162,7 @@ class GuruController extends Controller
             }
             }
         $gurus->delete();
-        Alert::success('Data Successfully Deleted', 'Good Job!')->autoclose(1300);
+        Alert::success('Data Successfully Deleted', 'Good Job!')->autoclose(1700);
         return redirect()->route('gurus.index');   
          }
 }

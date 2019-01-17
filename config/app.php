@@ -179,7 +179,7 @@ return [
         //add on this day
         Laratrust\LaratrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        UxWeb\SweetAlert\SweetAlertServiceProvider:: class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -232,7 +232,7 @@ return [
         //add on this day
         'Laratrust'   => Laratrust\LaratrustFacade::class,
         'Form' => Collective\Html\FormFacade::class,
-        ' Alert ' => UxWeb\SweetAlert\SweetAlert:: class ,
+        ' Alert ' => UxWeb\SweetAlert\SweetAlert::class ,
     ],
 
 ];

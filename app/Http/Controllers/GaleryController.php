@@ -53,7 +53,7 @@ class GaleryController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data successfully Saved','Good Job')->persistent(1300);
+        Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
          $this->validate($request,[
             'nama' => 'required|',
             // 'poto' => 'required|',
@@ -113,7 +113,7 @@ class GaleryController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        Alert::success('Data successfully Changed','Good Job')->persistent(1300);
+        Alert::success('Data successfully Changed','Good Job')->autoclose(1700);
          $this->validate($request,[
             'nama' => 'required|',
              'poto' => 'required|',
@@ -158,7 +158,7 @@ class GaleryController extends Controller
      */
     public function destroy($id)
       {
-        Alert::success('Data successfully Deleted','Good Job')->persistent(1300);
+        Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
          $galeriss = galeri::findOrFail($id);
           if ($galeriss->poto) {
             $old_foto = $galeriss->poto;

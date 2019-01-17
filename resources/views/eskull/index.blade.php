@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -16,9 +16,24 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			   
+			   <div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title">Data Eskul</h4>
+                            </li>
+                            <li class="breadcrumb-item bcrumb-1">
+                                <a href="/home">
+                                    <i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 			    <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Eskul</div>
         <div class="card-body"><a class="btn btn-outline-warning" href="{{ route('eskuls.create') }}"><i class="fa fa-plus-square">&nbsp</i>Tambah</a>
 
           <div class="table-responsive">

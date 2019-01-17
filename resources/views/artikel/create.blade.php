@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 
 <div class="row">
@@ -29,10 +29,10 @@
 			</div>
 
 
-				<div class="form-group">
-                                <label for="cc-payment" class="control-label mb-1">Gambar</label>
-                                <input name="gambar" type="file" required>
-                            </div
+			<div class="form-group">
+            <label for="cc-payment" class="control-label mb-1">Gambar</label>
+            <input name="gambar" type="file" required>
+                          </div>
 
 			  		<div class="form-group {{ $errors->has('user_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">Nama User</label>	

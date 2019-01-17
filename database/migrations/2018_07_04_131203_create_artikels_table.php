@@ -23,6 +23,7 @@ class CreateArtikelsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->integer('kategori_id');
+            $table->boolean('status')->default(false);
             $table->string('slug');
             $table->timestamps();
         });

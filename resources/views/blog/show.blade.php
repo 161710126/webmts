@@ -8,7 +8,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Blog Details</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <a class="breadcrumb-item" href="/">Home</a>
                                  <!--  <span class="brd-separetor"><img src="images/icons/brad.png" alt="separator images"></span> -->
                                   <span class="breadcrumb-item active">Blog Details</span>
                                 </nav>
@@ -55,26 +55,6 @@
 									</ul>
         						</div>
         					</div>
-							
-							<!-- Start Blog Author -->
-							<!-- <div class="blog__author text-center">
-								<div class="author__thumb">
-									<img src="images/blog/author/1.png" alt="author images">
-								</div>
-								<div class="author__info">
-									<span>February  13,  2018</span>
-									<h6><span>Author :</span> Robart Hanson</h6>
-									<p>Loxcepteur sint  occaecat cupidatat non prdent, suntw in culpa qui officia deserunt molli aLorem ipsum dolor sitamet, cadipisicinelit, sed do eiusmod.</p>
-									<ul class="dacre__social__link--2 bg--2 d-flex justify-content-center">
-										<li class="facebook"><a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-										<li class="twitter"><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-										<li class="vimeo"><a target="_blank" href="https://www.vimeo.com/"><i class="fa fa-vimeo"></i></a></li>
-										<li class="pinterest"><a target="_blank" href="https://pinterest.com/"><i class="fa fa-pinterest"></i></a></li>
-									</ul>
-								</div>
-							</div> -->
-							<!-- End Blog Author -->
-
 							<!-- prev next -->
 							<div class="navigation-area">
 								<div class="row">
@@ -84,11 +64,11 @@
 											<a href="#"><img class="img-fluid" src="{{asset('assets/user/img/blog/prev.jpg')}}" alt=""></a>
 										</div>
 										<div class="arrow">
-											<a href="{{ URL::to( 'blog/' . $previous->slug) }}"><span class="lnr text-white lnr-arrow-left"></span></a>
+											<a href="{{ URL::to( 'berita/' . $previous->slug) }}"><span class="lnr text-white lnr-arrow-left"></span></a>
 										</div>
 										<div class="detials">
 											<p>Prev Post</p>
-											<a href="{{ URL::to( 'blog/' . $previous->slug) }}"><h4>{{ $previous->judul }}</h4></a>
+											<a href="{{ URL::to( 'berita/' . $previous->slug) }}"><h4>{{ $previous->judul }}</h4></a>
 										</div>
 									</div>
 									 @endif
@@ -96,19 +76,36 @@
 									<div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
 										<div class="detials">
 											<p>Next Post</p>
-											<a href="{{ URL::to( 'blog/' . $next->slug) }}"><h4>{{ $next->judul }}</h4></a>
+											<a href="{{ URL::to( 'berita/' . $next->slug) }}"><h4>{{ $next->judul }}</h4></a>
 										</div>
 										<div class="arrow">
-											<a href="{{ URL::to( 'blog/' . $next->slug) }}"><span class="lnr text-white lnr-arrow-right"></span></a>
+											<a href="{{ URL::to( 'berita/' . $next->slug) }}"><span class="lnr text-white lnr-arrow-right"></span></a>
 										</div>
 										<div class="thumb">
-											<a href="{{ URL::to( 'blog/' . $next->slug) }}"><img class="img-fluid" src="{{asset('assets/user/img/blog/next.jpg')}}" alt=""></a>
+											<a href="{{ URL::to( 'berita/' . $next->slug) }}"><img class="img-fluid" src="{{asset('assets/user/img/blog/next.jpg')}}" alt=""></a>
 										</div>										
 									</div>	
 									 @endif								
 								</div>
 							</div><br>
 							<!-- End prev next -->
+
+							  <!-- Start Blog Author -->
+                           <!--  <div class="blog__author text-center">
+                                <div class="author__thumb">
+                                    <img src="{{asset('assets/baru/images/blog/author/user.png')}}" style="width: 150px; height: 150px;" alt="author images">
+                                </div>
+                                <div class="author__info">
+                                   
+                                    <h6>Admin MTs AL IKHLAS</h6>
+                                    <ul class="dacre__social__link--2 bg--2 d-flex justify-content-center">
+                                        <li class="facebook"><a target="_blank" href="https://www.facebook.com/mtsalikhlas.kebanii"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="twitter"><a target="_blank" href="https://twitter.com/MtsKeban"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="vimeo"><a target="_blank" href="https://www.instagram.com/wargamtsalikhlaskeban2/"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div><br> -->
+                            <!-- End Blog Author -->
 
 							<!-- Start Blog Comment -->
 							<div id="disqus_thread"></div>
@@ -131,44 +128,9 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-							<!-- End Blog Comment -->
-
-
-							<!-- Start Comment Form -->
-							<!-- <div class="commentfield">
-								<h4 class="title__line--3">Leave A Reply</h4>
-								<form action="#">
-									<div class="row">
-
-										<div class="col-md-6 col-lg-6 col-sm-6 col-12">
-											<div class="single__input__box">											
-												<input type="text" id="name" placeholder="Name">
-											</div>
-										</div>
-
-										<div class="col-md-6 col-lg-6 col-sm-6 col-12 xs-mt-30">
-											<div class="single__input__box">												
-												<input type="email" id="email" placeholder="E-mail">
-											</div>
-										</div>
-
-										<div class="col-md-12 col-lg-12 col-sm-12 col-12">
-											<div class="single__input__box">											
-												<textarea name="message" id="message" placeholder="Type your message here.."></textarea>
-											</div>
-											<div class="submit__btn">
-												<a class="dcare__btn" href="#">submit</a>
-											</div>
-										</div>
-
-									</div>
-								</form>
-							</div> -->
-							<!-- End Comment Form -->
 
         				</div>
         			</div>
-        			<!-- End BLog Details -->
         			<!-- Start Sidebar -->
         			@include('blog.side')
         			<!-- End Sidebar -->

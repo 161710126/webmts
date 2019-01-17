@@ -38,11 +38,12 @@
                             <div class="mainmenu__wrap">
                                 <nav class="mainmenu__nav">
                                     <ul class="mainmenu">
-                                    <li><a href="/beranda">Beranda</a></li>
+                                    <li><a href="/">Beranda</a></li>
                                     <li><a href="/about">Profil</a></li>
-                                    <li><a href="/fasilitas">Fasilitas</a></li>
                                     <li><a href="/guru">Guru</a></li>
-                                    <li><a href="/blog">Berita</a></li>
+                                    <li><a href="/event">Event</a></li>
+                                    <li><a href="/fasilitas">Fasilitas</a></li>
+                                    <li><a href="/berita">Berita</a></li>
                                     <li><a href="/eskulprestasi">Ekstrakurikuler</a></li>
                                     <li><a href="/galeri">Galery</a></li>
                                     <li><a href="/contact">Kontak</a></li>
@@ -50,7 +51,7 @@
                                 </nav>
                             </div>
                         </div>
-                        <!-- <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                       <!--  <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
                             <div class="shopbox d-flex justify-content-end align-items-center">
                                 <a class="minicart-trigger" href="#">
                                     <i class="fa fa-shopping-basket"></i>
@@ -62,11 +63,11 @@
                     <!-- Mobile Menu -->
                     <div class="mobile-menu d-block d-lg-none">
                         <div class="logo">
-                            <a href="index.html"><img src="{{asset('assets/baru/images/logo/2.png')}}"  alt="logo"></a>
+                            <a href="/"><img src="{{asset('assets/baru/images/logo/log.png')}}" style="width: 65px;" alt="logo"></a>
                         </div>
-                        <a class="minicart-trigger" href="#">
+                        <!-- <a class="minicart-trigger" href="#">
                             <i class="fa fa-shopping-basket"></i>
-                        </a>
+                        </a> -->
                     </div>
                     <!-- Mobile Menu -->
                 </div>

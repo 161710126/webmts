@@ -45,7 +45,7 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data successfully Saved','Good Job')->persistent(1300);
+        Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
        $this->validate($request,[
             'judul' => 'required|max:255',
              'content' => 'required',
@@ -67,9 +67,22 @@ class ArtikelController extends Controller
         }
         $artikels->user_id = $request->user_id;
         $artikels->kategori_id = $request->kategori_id;
-         $artikels->slug =str_slug($request->judul, '-');
+        $artikels->slug =str_slug($request->judul, '-');
 
         $artikels->save();
+        return redirect()->route('artikels.index');
+    }
+     public function publish($id)
+    {
+        $mobil = Artikel::find($id);
+        if ($mobil->status === 1) {
+            $mobil->status = 0;
+            Alert::success('Data successfully unpublished', 'Good Job')->autoclose(1700);
+        } else {
+            $mobil->status= 1;
+            Alert::success('Data successfully published', 'Good Job')->autoclose(1700);
+        }
+        $mobil->save();
         return redirect()->route('artikels.index');
     }
 
@@ -111,7 +124,7 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Alert::success('Data successfully Changed','Good Job')->persistent(1300);
+        Alert::success('Data successfully Changed','Good Job')->autoclose(1700);
        $this->validate($request,[
            'judul' => 'required|max:255',
              'content' => 'required|',
@@ -159,7 +172,7 @@ class ArtikelController extends Controller
      */
     public function destroy( $id)
     {
-        Alert::success('Data successfully Deleted','Good Job')->persistent(1300);
+        Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
         $artikels = Artikel::findOrFail($id);
 
          // if ($artikels->gambar) {

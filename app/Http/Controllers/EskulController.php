@@ -37,7 +37,7 @@ class EskulController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data successfully Saved','Good Job')->persistent(1300);
+        Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
          $this->validate($request,[
             'nama' => 'required|max:255',
              
@@ -90,7 +90,7 @@ class EskulController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Alert::success('Data successfully Changed','Good Job')->persistent(1300);
+        Alert::success('Data successfully Changed','Good Job')->autoclose(1700);
         $this->validate($request,[
              'nama' => 'required|max:255',
             'poto' => 'required|min:2',
@@ -131,7 +131,7 @@ class EskulController extends Controller
      */
     public function destroy($id)
     {
-        Alert::success('Data successfully Deleted','Good Job')->persistent(1300);
+        Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
          $eskuls = eskul::findOrFail($id);
            if ($eskuls->poto) {
             $old_foto = $eskuls->poto;

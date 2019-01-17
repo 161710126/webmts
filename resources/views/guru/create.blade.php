@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 
 <div class="row">
@@ -20,11 +20,39 @@
 				@endif
 			</div>
 
-	<div class="form-group {{$errors->has('jabatan') ? 'has-error' : '' }}">
+		    <div class="form-group {{$errors->has('jabatan') ? 'has-error' : '' }}">
 				<label class="control-label">Jabatan</label>
 				<input type="text"  name="jabatan" class="form-control" required>
 				@if ($errors->has('jabatan'))
 				<span class="help-block"><strong>{{ $errors->first('jabatan') }}</strong></span>
+				@endif
+			</div>
+			 <div class="form-group {{$errors->has('alamat') ? 'has-error' : '' }}">
+				<label class="control-label">alamat</label>
+				<input type="text"  name="alamat" class="form-control" required>
+				@if ($errors->has('alamat'))
+				<span class="help-block"><strong>{{ $errors->first('alamat') }}</strong></span>
+				@endif
+			</div>
+			 <div class="form-group">
+				<label class="control-label">Jenis Kelamin</label>
+				<select name="j_kelamin" class="form-control" required>
+                        <option value=" Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                </select>
+			</div>
+			 <div class="form-group {{$errors->has('telepon') ? 'has-error' : '' }}">
+				<label class="control-label">telepon</label>
+				<input type="text"  name="telepon" class="form-control" required>
+				@if ($errors->has('telepon'))
+				<span class="help-block"><strong>{{ $errors->first('telepon') }}</strong></span>
+				@endif
+			</div>
+			 <div class="form-group {{$errors->has('status') ? 'has-error' : '' }}">
+				<label class="control-label">status</label>
+				<input type="text"  name="status" class="form-control" required>
+				@if ($errors->has('status'))
+				<span class="help-block"><strong>{{ $errors->first('status') }}</strong></span>
 				@endif
 			</div>
 			<div class="form-group">

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -14,11 +14,27 @@
 @include('sweet::alert')
 	<div class="container">
 		<div class="col-md-12">
-		<div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Kontak</div>
-        <div class="card-body"><a class="btn btn-outline-warning" href="{{ route('kontaks.create') }}"><i class="fa fa-plus-square">&nbsp</i>Tambah</a>
 
+		<div class="block-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title">Data Komentar Pengunjung</h4>
+                            </li>
+                            <li class="breadcrumb-item bcrumb-1">
+                                <a href="/home">
+                                    <i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+		<div class="card mb-3">
+        <div class="card-body"><!-- <a class="btn btn-outline-warning" href="{{ route('kontaks.create') }}"><i class="fa fa-plus-square">&nbsp</i>Tambah</a>
+ -->
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
@@ -29,7 +45,7 @@
 					  <th>Telepon</th>
 					  <th>Subject</th>
 					  <th>Message</th>
-					  <th colspan="3">Action</th>
+					  <th colspan="1">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -42,9 +58,9 @@
 				    	<td>{{ $data->telepon}}</td>
 				    	<td>{{ $data->subject}}</td>
 				    	<td>{{ $data->message}}</td>
-						<td>
+						<!-- <td>
 							<a href="{{ route('kontaks.edit',$data->id) }}" class="btn btn-outline-primary"><i class="fa fa-pencil-square-o">&nbsp</i>Edit</a>
-						</td>
+						</td> -->
 						
 						<td>
 							<form method="post" action="{{ route('kontaks.destroy',$data->id) }}">

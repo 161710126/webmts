@@ -44,7 +44,7 @@ class FasilitasController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data successfully Saved','Good Job')->persistent(1300);
+        Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
          $this->validate($request,[
             'nama' => 'required|max:255',
             'poto' => 'required|',
@@ -102,7 +102,7 @@ class FasilitasController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        Alert::success('Data successfully Changed','Good Job')->persistent(1300);
+        Alert::success('Data successfully Changed','Good Job')->autoclose(1700);
          $this->validate($request,[
             'nama' => 'required|max:255',
              'poto' => 'required|',
@@ -147,7 +147,7 @@ class FasilitasController extends Controller
      */
     public function destroy($id)
       {
-        Alert::success('Data successfully Deleted','Good Job')->persistent(1300);
+        Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
          $fasilitas = fasilitas::findOrFail($id);
           if ($fasilitas->poto) {
             $old_foto = $fasilitas->poto;

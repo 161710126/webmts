@@ -9,7 +9,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Ekstrakurikuler</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <a class="breadcrumb-item" href="/">Home</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Ekstrakurikuler</span>
                                 </nav>
@@ -21,8 +21,8 @@
         </div>
 
 		 <center><header class="section-header">
-          <h2>Pengertian Ekstrakurikuler</h2>
-           <p style="font-size: 17px;">Ekstrakurikuler adalah kegiatan non-pelajaran formal yang dilakukan peserta didik sekolah atau universitas, umumnya di luar jam belajar kurikulum standar. <br>Kegiatan-kegiatan ini ada pada setiap jenjang pendidikan dari sekolah dasar sampai universitas.</p>
+          <h2>Defenisi Ekstrakurikuler</h2>
+           <p style="font-size: 17px;">Ekstrakurikuler adalah kegiatan non-pelajaran formal yang dilakukan peserta didik sekolah atau universitas, umumnya di luar jam belajar kuri-<br>kulum standar.Kegiatan-kegiatan ini ada pada setiap jenjang pendidikan dari sekolah dasar sampai universitas.</p>
         </header></center>
 		
 		<div class="container">
@@ -35,7 +35,7 @@
               <br>
                <center>
                <!-- <a href="#" data-featherlight="{{ asset ('assets/img/gambarweb/'.$data->poto) }}"> -->
-               <img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" width="100" height="100" alt="image" class="img-fluid">
+               <img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" width="150" height="150" alt="image" class="img-fluid">
                <!-- </a> -->
                </center>
               </div>

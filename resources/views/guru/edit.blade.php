@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 @section('content')
 <div class="row">
 	<div class="container">
@@ -24,12 +24,48 @@
 			  		</div>
 
                        
-                      <div class="form-group {{ $errors->has('jabatan') ? ' has-error' : '' }}">
+                     <div class="form-group {{ $errors->has('jabatan') ? ' has-error' : '' }}">
 			  			<label class="control-label">Jabatan</label>	
 			  			<input type="text" name="jabatan" class="form-control" value="{{ $gurus->jabatan }}"  required>
 			  			@if ($errors->has('jabatan'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('jabatan') }}</strong>
+                            </span>
+                        @endif
+			  		 </div>
+			  		 <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }}">
+			  			<label class="control-label">alamat</label>	
+			  			<input type="text" name="alamat" class="form-control" value="{{ $gurus->alamat }}"  required>
+			  			@if ($errors->has('alamat'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('alamat') }}</strong>
+                            </span>
+                        @endif
+			  		 </div>
+			  		 <div class="form-group {{ $errors->has('j_kelamin') ? ' has-error' : '' }}">
+			  			<label class="control-label">j_kelamin</label>	
+			  			<input type="text" name="j_kelamin" class="form-control" value="{{ $gurus->j_kelamin }}"  required>
+			  			@if ($errors->has('j_kelamin'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('j_kelamin') }}</strong>
+                            </span>
+                        @endif
+			  		 </div>
+			  		 <div class="form-group {{ $errors->has('telepon') ? ' has-error' : '' }}">
+			  			<label class="control-label">telepon</label>	
+			  			<input type="text" name="telepon" class="form-control" value="{{ $gurus->telepon }}"  required>
+			  			@if ($errors->has('telepon'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('telepon') }}</strong>
+                            </span>
+                        @endif
+			  		 </div>
+			  		 <div class="form-group {{ $errors->has('status') ? ' has-error' : '' }}">
+			  			<label class="control-label">status</label>	
+			  			<input type="text" name="status" class="form-control" value="{{ $gurus->status }}"  required>
+			  			@if ($errors->has('status'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('status') }}</strong>
                             </span>
                         @endif
 			  		 </div>

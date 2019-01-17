@@ -778,13 +778,13 @@ a#scrollUp {
   background-position: center center; }
 
 .bg-image--19 {
-  background-image: url(images/daftar.png);
+  background-image: url(images/daftar1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
 
 .bg-image--20 {
-  background-image: url(images/bg/20.jpg);
+  background-image: url(images/guru.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
@@ -802,7 +802,7 @@ a#scrollUp {
   background-position: center center; }
 
 .bg-image--23 {
-  background-image: url(images/bg/background.jpg);
+  background-image: url(images/testimonial/bg/1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
@@ -3450,8 +3450,10 @@ Blocks Styles
     z-index: -1; }
 
 .owl-carousel .owl-item img {
-  margin: auto;
-  width: auto; }
+  /*margin: auto;*/
+  height: 150px;
+  width: 150px; 
+}
 
 .testimonial__inner p {
   color: #ffffff;
@@ -3761,14 +3763,15 @@ Blocks Styles
 .gallery--3 .gallery .gallery__thumb a::after {
   background: #000 none repeat scroll 0 0;
   content: "";
-  height: 100%;
+  height: 400px;
   opacity: 0;
   position: absolute;
   right: 0;
   top: 0;
   transform: rotate(0deg);
   transition: all 0.5s ease 0s;
-  width: 100%;
+  width: 550px;
+  margin-left: 30px;
   z-index: 1;
   border-radius: 5px; }
 
@@ -3844,7 +3847,7 @@ Blocks Styles
     border: 1px solid #dddddd;
     color: #666666;
     font-family: "Roboto", sans-serif;
-    font-size: 24px;
+    font-size: 17px;
     font-weight: 700;
     height: 60px;
     line-height: 57px;

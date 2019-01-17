@@ -14,15 +14,21 @@ use App\User;
 use App\Testimoni;
 use App\Kategorigaleri;
 use App\Kategori_fasilitas;
+use App\Event;
 use Vinkla\Instagram\Instagram;
 class FrontendController extends Controller
 {
-    public function beranda()
+    public function index()
     {   
-        $artikels = Artikel::paginate(4);
+        $artikels = Artikel::orderBy('updated_at','desc')->paginate(4);
         $galeriss = galeri::paginate(5);
         $testimonis = Testimoni::all();
-    	return view('index',compact('artikels','galeriss','testimonis'));
+        $events = Event::orderBy('updated_at','desc')->paginate(3);
+        // instagram
+        // $instagram = new Instagram('9026781792.9cb49ff.2c1305b3244149368b5daf76ed37265c');
+        // $results = $instagram->media();
+        // http://localhost:8000/#access_token=9026781792.9cb49ff.2c1305b3244149368b5daf76ed37265c
+    	return view('frontend.home',compact('artikels','galeriss','testimonis','results','instagram'));
     }
     public function guru()
     {
@@ -46,8 +52,8 @@ class FrontendController extends Controller
      public function artikel(Request $request)
     {
          $search = $request->get('search');
-        $a = Artikel::where('judul','LIKE','%'.$search.'%')->orderBy('created_at','desc')->paginate(2);
-        $artikels = Artikel::paginate(2);
+        $artikels = Artikel::where('judul','LIKE','%'.$search.'%')->orderBy('created_at','desc')->paginate(2);
+        // $artikels = Artikel::paginate(2);
         return view('blog.home',compact('artikels','a','search'));
     }
 
@@ -63,6 +69,21 @@ class FrontendController extends Controller
     {
         $artikels = $kategori->Artikel()->latest()->paginate(5);
         return view('blog.home', compact('artikels'));
+    }
+
+     public function event(Request $request)
+    {
+         $search = $request->get('search');
+        $a = Event::where('judul','LIKE','%'.$search.'%')->orderBy('created_at','desc')->paginate(2);
+        $events = Event::paginate(2);
+        return view('frontend.event',compact('events','a','search'));
+    }
+     public function showevent(Event $events)
+    {
+         $previous = Event::where('id', '<', $events->id)->orderBy('id', 'desc')->first();
+        $next = Event::where('id', '>', $events->id)->orderBy('id')->first();
+        // $events = Artikel::findOrFail($id);
+        return view('frontend.event-show',compact('events','previous','next'));
     }
 
     public function fasilitas()
@@ -93,4 +114,5 @@ class FrontendController extends Controller
     //     return view('Galery.index', compact('kategori'));
     // }
 
+   
 }

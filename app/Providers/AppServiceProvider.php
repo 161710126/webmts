@@ -20,6 +20,12 @@ class AppServiceProvider extends ServiceProvider
             $recent = \App\Artikel::orderBy('created_at', 'desc')->take(4)->get();
             $view->with(compact('kategori', 'recent'));
         });  
+         view()->composer('frontend.event-show', function ($view) {
+            // $kategori = \App\Kategori::all();
+            // $category = \App\Category::all();
+            $recentt = \App\Event::orderBy('created_at', 'desc')->take(6)->get();
+            $view->with(compact('kategori', 'recentt'));
+        }); 
            
     }
 
