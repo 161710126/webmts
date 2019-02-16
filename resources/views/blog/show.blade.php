@@ -28,7 +28,7 @@
         				<div class="page__blog__details">
         					<article class="dacre__blog__details">
         						<div class="blog__thumb">
-        							<img src="{{ asset ('assets/img/gambargaleri/'.$artikels->gambar) }}" alt="blog images">
+        							<img src="{{ asset ('assets/img/gambargaleri/'.$artikels->gambar) }}" style="width: 850px; height: 800px;" alt="blog images">
         						</div>
         						<div class="blog__inner">
         							<h2>{{ $artikels->judul}}</h2>
@@ -39,7 +39,7 @@
         								<li><a href="#">Like : 07</a></li> -->
         							</ul>
 
-        							<p>{!! $artikels->content !!}.</p>
+        							<p>{!! $artikels->content !!}</p>
 
         							
         						</div>
@@ -50,8 +50,15 @@
         							<span>Share By:</span>
         							<ul class="dacre__social__link--2 bg--2 d-flex justify-content-end">
 										<li class="facebook"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-facebook"></i></a></li>
+
 										<li class="twitter"><a target="_blank" href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-twitter"></i></a></li>
+
 										<li class="pinterest"><a target="_blank" href="https://www.plus.google.com/sharer?url={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-google-plus"></i></a></li>
+
+                <li class="whatsapp"><a target="_blank" href="whatsapp://send?text=https://localhost:8000/berita/{{$artikels->slug}}">
+                <i class="fa fa-whatsapp my-float"></i></a></li>
+                                        <!-- <a href="whatsapp://send?text=URL Artikel">Bagikan ke WhatsApp</a>
+ -->
 									</ul>
         						</div>
         					</div>

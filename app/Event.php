@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
      protected $table = 'events';
-     protected $fillable = ['poto','judul','bulan','tgl','jam','alamat','deskripsi','slug'];
+     protected $fillable = ['poto','judul','bulan','tgl','tahun','jam','alamat','deskripsi','slug'];
      public $timestamps = true;
 
      public function getRouteKeyName()

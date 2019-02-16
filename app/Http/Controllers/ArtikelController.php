@@ -8,6 +8,7 @@ use App\Kategori;
 use App\User;
 use App\FIle;
 use Alert;
+use App\contact;
 use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
@@ -21,7 +22,8 @@ class ArtikelController extends Controller
     {
        
          $artikels =Artikel::with('user')->get();
-        return view('artikel.index',compact('artikels')); 
+         $countNotif = contact::where('status',0)->get()->count();
+        return view('artikel.index',compact('artikels','countNotif')); 
     }
 
     /**
@@ -32,9 +34,10 @@ class ArtikelController extends Controller
     public function create()
     {
       // $galeris = Galeri::all();
+        $countNotif = contact::where('status',0)->get()->count();
       $users = User::all();
        $kategori = Kategori::all();
-        return view('artikel.create',compact('users','kategori')); 
+        return view('artikel.create',compact('users','kategori','countNotif')); 
     }
 
     /**
@@ -47,7 +50,7 @@ class ArtikelController extends Controller
     {
         Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
        $this->validate($request,[
-            'judul' => 'required|max:255',
+            'judul' => 'required|unique:artikels|',
              'content' => 'required',
              // 'galeri' => 'required|max:255',
              'user_id' => 'required|max:255',
@@ -105,6 +108,7 @@ class ArtikelController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $artikels = Artikel::findOrFail($id);
         // $galeris = Galeri::all();
         $users = User::all();
@@ -112,7 +116,7 @@ class ArtikelController extends Controller
         $selectedes = Artikel::findOrFail($id)->user_id;
         $selectedes = Artikel::findOrFail($id)->kategori_id;
          // $selectedes = Artikel::findOrFail($id)->galeri;
-        return view('artikel.edit',compact('artikels','users','kategori','selectusers','selectkategori'));
+        return view('artikel.edit',compact('artikels','users','kategori','selectusers','selectkategori','countNotif'));
     }
 
     /**

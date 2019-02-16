@@ -27,7 +27,7 @@
                                 <a href="/home">
                                     <i class="fas fa-home"></i> Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -56,8 +56,7 @@
 				  	    <td>{{ $no++ }}</td>
 				    	<td>{{ $data->judul}}</td>
 				    	<td>{!! str_limit($data->content, 100, '&raquo;') !!}</td>
-				    	<td><img src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" style="max-height: 125px;max-width: 125px;margin-top: 7px"></td>
-						
+						<td><img class="img-circle" src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" style="width: 90px; height: 90px;"></td>
 				    	<td>{{ $data->user->name}}</td>
 				    	<td>{{ $data->kategori->nama_kategori}}</td>
 						<td>

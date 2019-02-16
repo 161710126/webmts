@@ -27,7 +27,7 @@
                                 <a href="/home">
                                     <i class="fas fa-home"></i> Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
 			  		<th>No</th>
 			  		  <th>Nama Eskul</th>
 					  <th>Poto</th>
-					  <th>Content</th>
+					  <th>Deskripsi</th>
 					  <th colspan="2">Action</th>
 			  		</tr>
 				  	</thead>
@@ -53,7 +53,7 @@
 				  	  <tr>
 				  	  <td>{{ $no++ }}</td>
 				    	<td>{{ $data->nama}}</td>
-						<td><img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" width="100" height="100"></p></td>
+						<td><img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 130px; height: 130px;"></td>
 						<td>{{ $data->content}}</td>
 						<td>
 							<a href="{{ route('eskuls.edit',$data->id) }}" class="btn btn-outline-primary"><i class="fa fa-pencil-square-o">&nbsp</i>Edit</a>

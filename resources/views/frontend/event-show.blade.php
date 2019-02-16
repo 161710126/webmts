@@ -10,7 +10,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Event Details</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <a class="breadcrumb-item" href="/beranda">Beranda</a>
                                   <!-- <span class="brd-separetor"><img src="images/icons/brad.png" alt="separator images"></span> -->
                                   <span class="breadcrumb-item active">Event Details</span>
                                 </nav>
@@ -30,26 +30,19 @@
 
 	        				<div class="event-section">
 	        					<div class="enent__thumb">
-	        						<img src="{{ asset ('assets/img/gambarweb/'.$events->poto) }}" alt="big images">
+	        						<img src="{{ asset ('assets/img/gambarweb/'.$events->poto) }}" style="width: 850px; height: 800px;" alt="big images">
 	        						<!-- <div class="box-timer">
                                         <div class="countbox timer-grid">
                                             <div  data-countdown="2019/12/17"></div>
                                         </div>
                                      </div> -->
 	        					</div>
-
 	        					<div class="event__inner">
-	        						<span><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($events->created_at)) }}</span>
+	        						<span><i class="fa fa-calendar"></i>{{ $events->bulan }} {{$events->tgl}},{{$events->tahun}}</span>
 	        						<h4>{{$events->judul}}</h4>
-
 	        						<p>{!! $events->deskripsi !!}. </p>
-
-	        						<!-- <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid funti labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud emco laboris.</blockquote> -->
 	        					</div>
         					</div>
-
-	        				
-
 	        				<div class="event-section">
 	        					<h2 class="event__information">EVENT DETAILS INFORMATION</h2>
 	        					<div class="event__location">
@@ -59,7 +52,7 @@
 	        						<li><span class="ti-time"></span>9.00 am - 5.00 pm</li>
 	        						<li><span class="ti-mobile"></span>Phone : +081377714255</li>
 	        						<li><span class="ti-email"></span>Email : mtsalikhlaskeban2@ymail.com,</li>
-	        						<li><span class="ti-dribbble"></span><a href="https://mtsalikhlaskeban2.sch.id"> https://mtsalikhlaskeban2.sch.id</a></li>
+	        						<!-- <li><span class="ti-dribbble"></span><a href="https://mtsalikhlaskeban2.sch.id"> https://mtsalikhlaskeban2.sch.id</a></li> -->
 	        						</ul>
 	        						<div class="event_map_marker">
 	        							<div id="evnetmap"></div>
@@ -77,7 +70,7 @@
         					</div>
 
         				  <div class="upcoming__event mt--80">
-                                <h2>Upcoming Event</h2>
+                                <h2>List Event</h2>
                                 <div class="row">
                                 @foreach($recentt as $data)
                                     <div class="col-lg-6">

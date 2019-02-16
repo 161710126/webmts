@@ -6,20 +6,22 @@ use App\prestasi;
 use App\eskul;
 use File;
 use Alert;
+use App\contact;
 use Illuminate\Http\Request;
 
 class PrestasiController extends Controller
  {
     public function index()
     {
+        $countNotif = contact::where('status',0)->get()->count();
          $prestasis =prestasi::with('eskul')->get();
-        return view('prestasiss.index',compact('prestasis')); 
+        return view('prestasiss.index',compact('prestasis','countNotif')); 
     }
-     public function index1()
-    {
-         $prestasis1 =prestasi::all();
-        return view('prestasiss.index1',compact('prestasis1')); 
-    }
+    //  public function index1()
+    // {
+    //      $prestasis1 =prestasi::all();
+    //     return view('prestasiss.index1',compact('prestasis1')); 
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -29,8 +31,8 @@ class PrestasiController extends Controller
     public function create()
     {
         $eskuls = eskul::all();
-
-        return view('prestasiss.create',compact('eskuls'));     }
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('prestasiss.create',compact('eskuls','countNotif'));     }
 
     /**
      * Store a newly created resource in storage.
@@ -83,10 +85,11 @@ class PrestasiController extends Controller
      */
     public function edit($id)
     { 
+        $countNotif = contact::where('status',0)->get()->count();
         $prestasis = prestasi::findOrFail($id);
         $eskuls = eskul::all();
         $selectedes = prestasi::findOrFail($id)->eskul_id;
-        return view('prestasiss.edit',compact('prestasis','eskuls','selectedes'));     }
+        return view('prestasiss.edit',compact('prestasis','eskuls','selectedes','countNotif'));     }
 
     /**
      * Update the specified resource in storage.

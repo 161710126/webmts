@@ -21,10 +21,10 @@
 			</div>
 			<label for="cc-payment" class="control-label mb-1">Foto</label>
                                 <input name="poto" type="file" required>
-                            </div>
+                            </div><br>
 
 	<div class="form-group {{$errors->has('content') ? 'has-error' : '' }}">
-				<label class="control-label">content</label>
+				<label class="control-label">Deskripsi</label>
 				<input type="text"  name="content" class="form-control" required>
 				@if ($errors->has('content'))
 				<span class="help-block"><strong>{{ $errors->first('content') }}</strong></span>

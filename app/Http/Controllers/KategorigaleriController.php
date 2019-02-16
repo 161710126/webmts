@@ -6,6 +6,7 @@ use App\Kategorigaleri;
 use Illuminate\Http\Request;
 use Alert;
 use Validator;
+use App\contact;
 class KategorigaleriController extends Controller
 {
     /**
@@ -15,9 +16,10 @@ class KategorigaleriController extends Controller
      */
     public function index()
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $kategori = Kategorigaleri::all();
         // dd($kategori);
-        return view('kg.index', compact('kategori'));
+        return view('kg.index', compact('kategori','countNotif'));
     }
 
     /**
@@ -27,7 +29,8 @@ class KategorigaleriController extends Controller
      */
     public function create()
     {
-        return view('kg.create');
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('kg.create',compact('countNotif'));
     }
 
     /**
@@ -85,8 +88,9 @@ class KategorigaleriController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $kategori = Kategorigaleri::findOrFail($id);
-        return view('kg.edit', compact('kategori'));
+        return view('kg.edit', compact('kategori','countNotif'));
     }
 
     /**

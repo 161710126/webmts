@@ -39,6 +39,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']],function(){
        Route::resource('kategorisfasilitas','KategoriFasilitasController');
        Route::resource('events','EventController');
        Route::post('events/{publish}', 'EventController@Publish')->name('events.publish');
+       Route::resource('infos','InfosekilasController');
+       Route::get('notifikasi','ContactController@notifikasi')->name('notifikasi');
+       Route::post('kontaks/{publish}','ContactController@Publish')->name('kontaks.publish');
 });
 
 Route::get('contact-us', 'ContactUSController@contactUS');

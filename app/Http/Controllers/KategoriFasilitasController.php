@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\kategori_fasilitas;
 use Illuminate\Http\Request;
 use Alert;
+use App\contact;
 class KategoriFasilitasController extends Controller
  {
     public function index()
     {
+        $countNotif = contact::where('status',0)->get()->count();
          $kategfasilitas =kategori_fasilitas::all();
-        return view('kategori_fasilitas.index',compact('kategfasilitas')); 
+        return view('kategori_fasilitas.index',compact('kategfasilitas','countNotif')); 
     }
 
     /**
@@ -20,7 +22,9 @@ class KategoriFasilitasController extends Controller
      */
     public function create()
     {
-        return view('kategori_fasilitas.create');     }
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('kategori_fasilitas.create',compact('countNotif'));
+             }
 
     /**
      * Store a newly created resource in storage.
@@ -60,8 +64,9 @@ class KategoriFasilitasController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $kategfasilitas = kategori_fasilitas::findOrFail($id);
-        return view('kategori_fasilitas.edit',compact('kategfasilitas'));     }
+        return view('kategori_fasilitas.edit',compact('kategfasilitas','countNotif'));     }
 
     /**
      * Update the specified resource in storage.

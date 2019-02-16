@@ -1,6 +1,6 @@
  <header id="header" class="jnr__header header--2 clearfix">
             <!-- Start Header Top Area -->
-            <div class="junior__header__top bg-image--5">
+            <!-- <div class="junior__header__top bg-image--5">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-lg-6 col-sm-9 col-12">
@@ -11,17 +11,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <!-- <div class="col-md-4 col-lg-6 col-sm-3 col-12">
+                        <div class="col-md-4 col-lg-6 col-sm-3 col-12">
                             <div class="jun__header__top__right">
                                 <ul class="accounting d-flex justify-content-lg-end justify-content-md-end justify-content-start align-items-center">
                                     <li><a class="login-trigger" href="{{url('/login')}}">Login</a></li>
                                     <li><a class="accountbox-trigger" href="#">Register</a></li>
                                 </ul>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- End Header Top Area -->
             <!-- Start Mainmenu Area -->
             <div class="mainmenu__wrapper bg--white sticky__header">
@@ -41,11 +41,11 @@
                                     <li><a href="/">Beranda</a></li>
                                     <li><a href="/about">Profil</a></li>
                                     <li><a href="/guru">Guru</a></li>
-                                    <li><a href="/event">Event</a></li>
-                                    <li><a href="/fasilitas">Fasilitas</a></li>
+                                    <li><a href="/event">Acara</a></li>
                                     <li><a href="/berita">Berita</a></li>
                                     <li><a href="/eskulprestasi">Ekstrakurikuler</a></li>
-                                    <li><a href="/galeri">Galery</a></li>
+                                    <li><a href="/fasilitas">Fasilitas</a></li>
+                                    <li><a href="/galeri">Galeri</a></li>
                                     <li><a href="/contact">Kontak</a></li>
                                     </ul>
                                 </nav>

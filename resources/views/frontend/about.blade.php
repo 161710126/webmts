@@ -1,65 +1,32 @@
 @extends('layouts.index')
 @section('content')
-		<section class="dcare__counterup__area section-padding--lg bg-image--6">	
+		<!-- <section class="dcare__counterup__area section-padding--lg bg-image--6">	
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 col-lg-12 col-sm-12">
-						<div class="counterup__wrapper d-flex flex-wrap flex-lg-nowrap flex-md-nowrap justify-content-between">
+          <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="counterup__wrapper d-flex flex-wrap flex-lg-nowrap flex-md-nowrap justify-content-between">
+        @foreach($infos as $data)
                             <div class="funfact">
                                 <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/1.png')}}" alt="flat icon">
+                                    <img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="flat icon">
                                 </div>
                                 <div class="fact__count ">
-                                    <span class="count">25</span>
+                                    <span class="count">{{ $data->jumlah }}</span>
                                 </div>
                                 <div class="fact__title">
-                                    <h2>Jumlah Guru</h2>
+                                    <h2>{{ $data->nama }}</h2>
                                 </div>
-                            </div> 
-                            <div class="funfact">
-                                <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/2.png')}}" alt="flat icon">
-                                </div>
-                                <div class="fact__count ">
-                                    <span class="count color--2">121</span>
-                                </div>
-                                <div class="fact__title">
-                                    <h2>Jumlah Siswa</h2>
-                                </div>
-                            </div> 
-                            <div class="funfact">
-                                <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/3.png')}}" alt="flat icon">
-                                </div>
-                                <div class="fact__count ">
-                                    <span class="count color--3">1988</span>
-                                </div>
-                                <div class="fact__title">
-                                    <h2>MTs Berdiri</h2>
-                                </div>
-                            </div> 
-                            <div class="funfact">
-                                <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/2.png')}}" alt="flat icon">
-                                </div>
-                                <div class="fact__count ">
-                                    <span class="count color--2">95</span>
-                                </div>
-                                <div class="fact__title">
-                                    <h2>Jumlah Siswi</h2>
-                                </div>
-                            </div> 
-						</div>
-					</div>
+                            </div>       
+          @endforeach
+            </div>
+          </div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<div class="about-us-content-image">
 			<img src="{{asset('assets/guest/images/guru.jpg')}}" alt="image">
 		</div>
-		
-
 		
 <section class="junior__welcome__area section-padding--lg poss-relative bg-image--21">
 			<div class="container">
@@ -142,7 +109,7 @@ Murid pada tahun pertama (1988/1989) berdiri MTs Al Ikhlas Keban II berjumlah 8 
       </div>
     </section>
 
-<section class="we-have-faith">
+<!-- <section class="we-have-faith">
       <div class="container">
         <div class="row">
           <div class="section-header">
@@ -177,7 +144,6 @@ sbb:
             <div class="col-sm-6 col-md-3">
               <img src="{{asset('assets/guest/images/we-have-faith-img-3.png')}}" alt="img">
               <h4>Kelulusan</h4>
-              <!-- <p>Sesuai dengan ketentuan PP No. 19 tahun 2005 pasal 72</p><br> -->
               <p style="font-size: 17px;">1. Peserta didik dinyatakan lulus dari satuan pendidikan dasar dan menengah setelah<br>
                 a. Menyelesaikan seluruh program pembelajaran.<br>
                 b. Memperoleh nilai minimal baik pada penilaian akhir tahun seluruh mata pelajaran Agana dan
@@ -203,10 +169,9 @@ mereka telah memiliki kemampuhan menguasai ilmu pengetahuan dan teknologi, tramp
 memiliki jiwa tanggap terhadap iptek</p>
             </div>
           </div>
-          
         </div>
       </div>
-    </section>
+    </section> -->
 
 <section class="about-us-content">
 			<center><h2>Profile Madrasah</h2></center><br>
@@ -362,46 +327,9 @@ memiliki jiwa tanggap terhadap iptek</p>
             </table>
           </div>
         </div>
-       <!--  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
       </div>
       </div>
       </div>
       </div>
       </section>
-				
-		
-		
-		<!-- <section class="page-sponsor">
-			<div class="container">
-				<div class="row">
-					<div class="sponsor-logo">
-						<div class="col-sm-3">
-							<img src="{{asset('assets/guest/images/sponsor-logo-1.png')}}" alt="image">
-						</div>
-						<div class="col-sm-3">
-							<img src="{{asset('assets/guest/images/sponsor-logo-2.png')}}" alt="image">
-						</div>
-						<div class="col-sm-3">
-							<img src="{{asset('assets/guest/images/sponsor-logo-3.png')}}" alt="image">
-						</div>
-						<div class="col-sm-3">
-							<img src="{{asset('assets/guest/images/sponsor-logo-4.png')}}" alt="image">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
 		@endsection
-
-		<!-- <div class="crumina-module crumina-testimonial-item testimonial-item-quote-right">
-<div class="testimonial-img-author">
-<img src="https://smkassalaambandung.sch.id/photos/1/testimoni_alumni/5a7a7f53409ac.png" alt="author">
-</div>
-<div class="author-info"><a href="#!" class="h6 author-name">Akmal Musthofa</a>
-<div class="author-company">Web Developer PT SMOOETS TEKNOLOGI OUTSOURCING</div>
-</div>
-<h6 class="testimonial-text">
-<p>Selama belajar di SMK ASSALAAM, potensi diri semakin melejit. Bersyukur bisa sekolah di lembaga pendidikan yang berkualitas, mengajarkan kreatifitas, dan dibekali ilmu agama seperti SMK ASSALAAM. SMK ASSALAAM luar biasa bermanfaat.</p>
-</h6>
-<div class="quote"><svg class="utouch-icon utouch-icon-quotes"><use xlink:href="#utouch-icon-quotes"></use></svg></div>
-</div> -->

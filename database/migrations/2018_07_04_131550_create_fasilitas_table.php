@@ -18,7 +18,7 @@ class CreateFasilitasTable extends Migration
             $table->string('nama');
             $table->string('poto');
             $table->unsignedInteger('kategorifasilitas_id');
-            $table->foreign('kategorifasilitas_id')->references('id')->on('kategori_fasilitas')->ondelete('cascade');
+            $table->foreign('kategorifasilitas_id')->references('id')->on('kategori_fasilitas')->OnDelete('CASCADE');
 
             $table->timestamps();
         });

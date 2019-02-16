@@ -35,7 +35,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-                    \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+            \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
 
         ],
 
@@ -62,7 +62,8 @@ class Kernel extends HttpKernel
         'role' =>\Laratrust\Middleware\LaratrustRole::class,
         'permission' => \Laratrust\middleware\LaratrustPermission::class,
         'ability'=> \Laratrust\Middleware\LaratrusAbility::class,
-            'sweetalert' => \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+        'sweetalert' => \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+        'cors' => \App\Http\Middleware\Cors::class,
 
     ];
 }

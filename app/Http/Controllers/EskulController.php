@@ -7,18 +7,20 @@ use File;
 use Auth;
 use Illuminate\Http\Request;
 use Alert;
+use App\contact;
 class EskulController extends Controller
  {
     public function index()
     {
          $eskuls =eskul::all();
-        return view('eskull.index',compact('eskuls')); 
+         $countNotif = contact::where('status',0)->get()->count();
+        return view('eskull.index',compact('eskuls','countNotif')); 
     }
-    public function index1()
-    {
-         $eskuls1 =eskul::all();
-        return view('eskull.index1',compact('eskuls1')); 
-    }
+    // public function index1()
+    // {
+    //      $eskuls1 =eskul::all();
+    //     return view('eskull.index1',compact('eskuls1')); 
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +29,9 @@ class EskulController extends Controller
      */
     public function create()
     {
-        return view('eskull.create');     }
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('eskull.create',compact('countNotif'));
+             }
 
     /**
      * Store a newly created resource in storage.
@@ -78,8 +82,9 @@ class EskulController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $eskuls = eskul::findOrFail($id);
-        return view('eskull.edit',compact('eskuls'));     }
+        return view('eskull.edit',compact('eskuls','countNotif'));     }
 
     /**
      * Update the specified resource in storage.

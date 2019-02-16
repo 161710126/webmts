@@ -12,10 +12,10 @@
 										<!-- <h6><span class="color-pink">He</span><span class="secondary-color">llo</span> Kidz <span class="separator">,</span></h6> -->
 										<!-- <h1 style="color: black;">PPDB MTs AL IKHLAS</h1>
 										<p style="color: black; font-size: 20px">MTs AL IKHLAS menerima pendaftaran siswa/i baru .....</p> -->
-										<center><div class="slider__btn">
+										<!-- <center><div class="slider__btn">
 											<a style="margin-right: 140px;" class="dcare__btn btn__org max__height-btn hover--theme" href="#">Daftar Sekarang</a>
 										</div>
-										</center>
+										</center> -->
 									</div>
 								</div>
 								<!-- End Single Slide -->
@@ -35,9 +35,9 @@
 										<!-- <h6><span class="color-pink">He</span><span class="secondary-color">llo</span> Kidz <span class="separator">,</span></h6> -->
 										<h1 style="color: #28ef0a;">Selamat Datang di situs<br>Resmi MTs AL IKHLAS</h1>
 										<p style="color: #28ef0a; font-size: 20px;">Mts Al IKHLAS ini merupakan sekolah yang berdiri semejak tahun 1988,berkat sekolah ini banyak alumni-alumni MTs yang berhasil.</p>
-										<div class="slider__btn">
+										<!-- <div class="slider__btn">
 											<a class="dcare__btn btn__org max__height-btn hover--theme" href="#">Read More</a>
-										</div>
+										</div> -->
 									</div>
 								</div>
 								<!-- End Single Slide -->
@@ -108,7 +108,7 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 		</section>
 
 		@php
-		$artikels = App\Artikel::orderBy('updated_at','desc')->paginate(4);
+		$artikels = App\Artikel::orderBy('created_at','desc')->paginate(4);
 		@endphp
 		<section class="featured-news">
 			<div class="container">
@@ -119,6 +119,7 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 				</div>
 				<div class="row">
 					<div class="section-content">
+					@if (count($artikels) > 0)
 					@foreach($artikels as $data)
 					@if($data->status == 0)
                      @else
@@ -147,6 +148,9 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 						</div>
 						@endif
 						@endforeach
+						@else
+                            <center><h3><b><i>Maaf Tidak ada Berita yang ditemukan</i></b></h3></center><br>
+                            @endif
 					</div>
 					  <a style="margin-left: 450px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/berita">Lihat Semua Berita & Artikel Kami</a>
 				</div>
@@ -154,7 +158,7 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 		</section>
 		
 		@php
-		$events = App\Event::orderBy('updated_at','desc')->paginate(3);
+		$events = App\Event::orderBy('created_at','desc')->paginate(3);
 		@endphp
 		<section class="dcare__event__area bg--white section-padding--lg">
 			<div class="container">
@@ -167,6 +171,7 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 				</div>
 				<div class="row mt--40">
 					<!-- Start Single Event -->
+					@if (count($events) > 0)
 					@foreach($events as $data)
 					 @if($data->status == 0)
                      @else
@@ -193,13 +198,17 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 								</div>
 								<ul class="event__btn">
 									
-									<li style="margin-left: 100px;"><a href="/event/{{$data->slug}}">Learn More</a></li>
+							<li style="margin-left: 100px;"><a href="/event/{{$data->slug}}">Learn More</a></li>
 								</ul>
 							</div>
+							<br>
 						</div>
 					</div>
 					@endif
 					@endforeach
+					@else
+					<center><h3><b><i>Maaf Tidak ada Event yang ditemukan</i></b></h3></center>
+					@endif
 				</div>
 					<br><br><a style="margin-left: 450px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/event">Lihat Semua Agenda Sekolah</a>
 					<!-- end Single Event -->
@@ -212,57 +221,20 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 					<div class="col-md-12 col-lg-12 col-sm-12">
 						<div class="counterup__wrapper d-flex flex-wrap flex-lg-nowrap flex-md-nowrap justify-content-between">
 							<!-- Start Single Fact -->
+                           @foreach($infos as $data)
                             <div class="funfact">
                                 <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/1.png')}}" alt="flat icon">
+                                    <img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="flat icon">
                                 </div>
                                 <div class="fact__count ">
-                                    <span class="count">25</span>
+                                    <span class="count">{{ $data->jumlah }}</span>
                                 </div>
                                 <div class="fact__title">
-                                    <h2>Jumlah Guru</h2>
+                                    <h2>{{ $data->nama }}</h2>
                                 </div>
                             </div> 
-                            <!-- End Single Fact -->
-							<!-- Start Single Fact -->
-                            <div class="funfact">
-                                <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/2.png')}}" alt="flat icon">
-                                </div>
-                                <div class="fact__count ">
-                                    <span class="count color--2">121</span>
-                                </div>
-                                <div class="fact__title">
-                                    <h2>Jumlah Siswa</h2>
-                                </div>
-                            </div> 
-                            <!-- End Single Fact -->
-							<!-- Start Single Fact -->
-                            <div class="funfact">
-                                <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/3.png')}}" alt="flat icon">
-                                </div>
-                                <div class="fact__count ">
-                                    <span class="count color--3">1988</span>
-                                </div>
-                                <div class="fact__title">
-                                    <h2>MTs Berdiri</h2>
-                                </div>
-                            </div> 
-                            <!-- End Single Fact -->
-							<!-- Start Single Fact -->
-                            <div class="funfact">
-                                <div class="fact__icon">
-                                    <img src="{{asset('assets/baru/images/funfact/2.png')}}" alt="flat icon">
-                                </div>
-                                <div class="fact__count ">
-                                    <span class="count color--2">95</span>
-                                </div>
-                                <div class="fact__title">
-                                    <h2>Jumlah Siswi</h2>
-                                </div>
-                            </div> 
-                            <!-- End Single Fact -->
+                            
+          					@endforeach
 						</div>
 					</div>
 				</div>

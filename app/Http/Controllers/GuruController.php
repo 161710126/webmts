@@ -6,6 +6,7 @@ use App\guru;
 use File;
 use Auth;
 use Alert;
+use App\contact;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
@@ -13,7 +14,8 @@ class GuruController extends Controller
     public function index()
     {
          $gurus =guru::all();
-        return view('guru.index',compact('gurus')); 
+         $countNotif = contact::where('status',0)->get()->count();
+        return view('guru.index',compact('gurus','countNotif')); 
     }
      
     
@@ -25,7 +27,8 @@ class GuruController extends Controller
      */
     public function create()
     {
-        return view('guru.create');  
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('guru.create',compact('countNotif'));  
     }
 
     /**
@@ -87,8 +90,9 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $gurus = guru::findOrFail($id);
-        return view('guru.edit',compact('gurus')); 
+        return view('guru.edit',compact('gurus','countNotif')); 
             }
 
     /**

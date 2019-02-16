@@ -6521,7 +6521,7 @@ h3.widget-title-modal {
     .sidebar__widgets .single__widget.recent__post ul li:not(first-child) {
       margin-top: 30px; }
     .sidebar__widgets .single__widget.recent__post ul li a img {
-      width: 95px; }
+      width: 200px; }
     .sidebar__widgets .single__widget.recent__post ul li .post__content {
       padding-left: 20px; }
       .sidebar__widgets .single__widget.recent__post ul li .post__content h6 {

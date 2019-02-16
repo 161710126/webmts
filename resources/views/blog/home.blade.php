@@ -9,7 +9,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">blog list view</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/">Home</a>
+                                  <a class="breadcrumb-item" href="/">Beranda</a>
                                   <!-- <span class="brd-separetor"><img src="images/icons/brad.png" alt="separator images"></span> -->
                                   <span class="breadcrumb-item active">blog list view</span>
                                 </nav>
@@ -57,6 +57,9 @@
                                                     <li class="facebook"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-facebook"></i></a></li>
                                                     <li class="twitter"><a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-twitter"></i></a></li>
                                                     <li class="pinterest"><a href="https://www.plus.google.com/sharer?url={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-google-plus"></i></a></li>
+
+                                                     <li class="whatsapp"><a target="_blank" href="whatsapp://send?text=https://localhost:8000/berita/{{$data->slug}}">
+                                                     <i class="fa fa-whatsapp my-float"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -65,6 +68,8 @@
                             </div>
                             @endif
                             @endforeach
+                            @else
+                            <center><h3><b><i>Maaf Tidak ada Berita yang ditemukan</i></b></h3></center>
                             @endif
                             <!-- End Single BLog -->
         				</div>

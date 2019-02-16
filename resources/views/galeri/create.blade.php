@@ -39,7 +39,7 @@
 
 			  <label for="cc-payment" class="control-label mb-1">Foto</label>
                                 <input name="poto" type="file" required>
-                            </div>
+                            </div><br>
 
 			
 

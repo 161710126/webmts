@@ -3,7 +3,7 @@
 
         					<!-- Single Widget -->
         					<div class="single__widget search">
-        						<h4>Search</h4>
+        						<h4>Search Berita</h4>
         						<form method="GET" action="{{url('berita')}}">
         							<input type="search" name="search" value="" placeholder="Search keyword" required>
         							<button type="submit"><i class="fa fa-search"></i></button>
@@ -17,13 +17,13 @@
 									<img src="{{asset('assets/baru/images/others/user.png')}}" alt="about images">
 									<div class="about__info">
 										<div class="about__inner">
-                                                                                        <h3 style="color: white">"Programmer"</h3><br>
-											<h6>SMK ASSALAAM BANDUNG</h6>
-											<h6>M Junika Berli</h6>
+                                                                                       <!--  <h3 style="color: white">"Programmer"</h3><br> -->
+											<h6>MTs Al IKHLAS KEBAN II</h6>
+											<h6>Admin Sekolah</h6>
 											<ul class="dacre__social__link d-flex justify-content-center">
-												<li class="facebook"><a target="_blank" href="https://www.facebook.com/mjunikaberli.junika"><i class="fa fa-facebook"></i></a></li>
-												<li class="vimeo"><a target="_blank" href="https://www.instagram.com/m_junika010601/"><i class="fa fa-instagram"></i></a></li>
-                                                                                                <li class="pinterest"><a href="https://www.plus.google.com/sharer?url={{ urlencode(Request::fullUrl()) }}"><i class="fa fa-google-plus"></i></a></li>
+												<li class="facebook"><a target="_blank" href="https://www.facebook.com/mtsalikhlas.kebanii"><i class="fa fa-facebook"></i></a></li>
+                                                                        <li class="twitter"><a target="_blank" href="https://twitter.com/MtsKeban"><i class="fa fa-twitter"></i></a></li>
+                                                                        <li class="vimeo"><a target="_blank" href="https://www.instagram.com/wargamtsalikhlaskeban2/"><i class="fa fa-instagram"></i></a></li>
 											</ul>
 										</div>
 									</div>
@@ -39,7 +39,7 @@
                                                                         @if($data->status == 0)
                                                                         @else
 									<li>
-										<a href="/berita/{{ $data->slug }}"><img class="img-circle" src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" style="width: 80px;" alt=""></a>
+										<a href="/berita/{{ $data->slug }}"><img class="img-circle" src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" alt=""></a>
 										<div class="post__content">
 											<h6><a href="/berita/{{ $data->slug }}">{{$data->judul}}</a></h6>
 											<span class="date"><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($data->created_at)) }}</span>
@@ -56,8 +56,8 @@
 									@foreach($kategori as $data)
 									<ul class="cat-list">
 											<a href="/berita/kategori/{{ $data->slug }}" class="d-flex justify-content-between">
-											<h3>{{ $data->nama_kategori }}</h3>
-											<p>{{ $data->Artikel->count() }}</p>
+											<h5><br>{{ $data->nama_kategori }}</h5>
+											<p><br>{{ $data->Artikel->count() }}</p>
 											</a>
 																						
 									</ul>

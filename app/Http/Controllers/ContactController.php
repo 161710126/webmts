@@ -15,7 +15,9 @@ class ContactController extends Controller
     public function index()
     {
          $kontaks =contact::all();
-        return view('Kontak.index',compact('kontaks')); 
+          $kontakNotif = contact::where('status','0')->get();
+            $countNotif = contact::where('status','0')->get()->count();
+        return view('Kontak.index',compact('kontaks','kontakNotif','countNotif')); 
     }
 
     /**
@@ -36,7 +38,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
+        // Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
          $this->validate($request,[
             'nama' => 'required|unique:contacts',
             'email' => 'required|max:255',
@@ -98,9 +100,31 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
+        // Alert::success('Data successfully Deleted','Good Job')->autoclose(1700);
         $kontaks = contact::findOrFail($id);
          $kontaks->delete();
         return redirect()->route('kontaks.index');  
     }
+
+    public function notifikasi()
+    {
+        
+            $kontaks = contact::all();
+            $kontakNotif = contact::where('status','0')->get();
+            $countNotif = contact::where('status',0)->get()->count();
+            return view('notif.index',compact('kontaks','kontakNotif','countNotif'));
+    }
+
+    public function publish($id)
+    {
+        $kontaks = contact::findOrFail($id);
+        if ($kontaks->status === 1){
+            $kontaks->status = 0;
+        } else {
+            $kontaks->status = 1;
+        }
+        $kontaks->save();
+        return redirect()->route('kontaks.index');
+        }
+
 }

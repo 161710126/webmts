@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\contact;
 use Laratrust\LaratrustFacade as Laratrust;
 class HomeController extends Controller
 {
@@ -28,7 +29,8 @@ class HomeController extends Controller
     }
     protected function adminDashboard()
     {
-        return view('dashboard.admin');
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('dashboard.admin',compact('countNotif'));
     }
     protected function memberDashboard()
     {

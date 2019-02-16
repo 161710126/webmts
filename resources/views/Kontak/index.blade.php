@@ -26,7 +26,7 @@
                                 <a href="/home">
                                     <i class="fas fa-home"></i> Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            
                         </ul>
                     </div>
                 </div>

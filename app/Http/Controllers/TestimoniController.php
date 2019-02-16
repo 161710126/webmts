@@ -6,6 +6,7 @@ use App\Testimoni;
 use App\File;
 use Illuminate\Http\Request;
 use Alert;
+use App\contact;
 class TestimoniController extends Controller
 {
     /**
@@ -15,8 +16,9 @@ class TestimoniController extends Controller
      */
     public function index()
     {
+        $countNotif = contact::where('status',0)->get()->count();
        $testimonis =Testimoni::all();
-        return view('testimoni.index',compact('testimonis')); 
+        return view('testimoni.index',compact('testimonis','countNotif')); 
     }
 
     /**
@@ -26,7 +28,8 @@ class TestimoniController extends Controller
      */
     public function create()
     {
-      return view('testimoni.create');  
+        $countNotif = contact::where('status',0)->get()->count();
+      return view('testimoni.create',compact('countNotif'));  
     }
 
     /**
@@ -83,8 +86,9 @@ class TestimoniController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
          $testimonis = Testimoni::findOrFail($id);
-        return view('testimoni.edit',compact('testimonis')); 
+        return view('testimoni.edit',compact('testimonis','countNotif')); 
     }
 
     /**

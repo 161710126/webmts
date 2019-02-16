@@ -14,7 +14,7 @@
         			{{ csrf_field() }}
 			  		
 			  		<div class="form-group {{ $errors->has('nama_fasilitas') ? ' has-error' : '' }}">
-			  			<label class="control-label">nama_fasilitas</label>	
+			  			<label class="control-label">Nama Fasilitas</label>	
 			  			<input type="text" name="nama_fasilitas" class="form-control" value="{{ $kategfasilitas->nama_fasilitas }}"  required>
 			  			@if ($errors->has('nama_fasilitas'))
                             <span class="help-block">

@@ -26,7 +26,7 @@
                                 <a href="/home">
                                     <i class="fas fa-home"></i> Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -41,9 +41,9 @@
 			  		<tr>
 			  		<th>No</th>
 			  		  <th>Nama</th>
-					  <th>tanggal_peroleh</th>
+					  <th>Tanggal Peroleh</th>
 					  <th>Poto</th>
-					  <th>deskripsi</th>
+					  <th>Deskripsi</th>
 					  <th>Kategori Eskul</th>
 					  <th colspan="3">Action</th>
 			  		</tr>
@@ -55,7 +55,7 @@
 				  	  <td>{{ $no++ }}</td>
 				    	<td>{{ $data->nama}}</td>
 				    	<td>{{ $data->tanggal_peroleh}}</td>
-				    	<td><img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="max-height: 125px;max-width: 125px;margin-top: 7px"></td>
+				    	<td><img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
 				    	<td>{{ $data->deskripsi}}</td>
 				    	<td>{{ $data->eskul->nama}}</td>
 						<td>

@@ -15,6 +15,7 @@ use App\Testimoni;
 use App\Kategorigaleri;
 use App\Kategori_fasilitas;
 use App\Event;
+use App\infosekilas;
 use Vinkla\Instagram\Instagram;
 class FrontendController extends Controller
 {
@@ -24,11 +25,12 @@ class FrontendController extends Controller
         $galeriss = galeri::paginate(5);
         $testimonis = Testimoni::all();
         $events = Event::orderBy('updated_at','desc')->paginate(3);
+        $infos = infosekilas::all();
         // instagram
         // $instagram = new Instagram('9026781792.9cb49ff.2c1305b3244149368b5daf76ed37265c');
         // $results = $instagram->media();
         // http://localhost:8000/#access_token=9026781792.9cb49ff.2c1305b3244149368b5daf76ed37265c
-    	return view('frontend.home',compact('artikels','galeriss','testimonis','results','instagram'));
+    	return view('frontend.home',compact('artikels','galeriss','testimonis','results','instagram','infos'));
     }
     public function guru()
     {
@@ -67,7 +69,7 @@ class FrontendController extends Controller
 
     public function artikelkategori(Kategori $kategori)
     {
-        $artikels = $kategori->Artikel()->latest()->paginate(5);
+        $artikels = $kategori->Artikel()->latest()->orderBy('updated_at','desc')->paginate(6);
         return view('blog.home', compact('artikels'));
     }
 
@@ -97,13 +99,14 @@ class FrontendController extends Controller
      public function Testimoni()
     {
         $testimonis = Testimoni::all();
-        return view('frontend.about',compact('testimonis'));
+        $infos = infosekilas::all();
+        return view('frontend.about',compact('testimonis','infos'));
     }
 
     public function galeri()
     {
         $kategori = Kategorigaleri::all();
-        $galeriss = Galeri::all();
+        $galeriss = Galeri::orderBy('created_at','desc')->paginate(100);
         $kategorig = galeri::all();
         return view('frontend.galery',compact('kategorig','kategori','galeriss'));
     }
@@ -114,5 +117,20 @@ class FrontendController extends Controller
     //     return view('Galery.index', compact('kategori'));
     // }
 
-   
+    public function about()
+    {
+        $infos = infosekilas::all();
+        return view('frontend.about',compact('infos'));
+    }   
+    public function infos()
+    {
+        $infos = infosekilas::all();
+        return view('dashboard.admin',compact('infos'));
+    }
+
+    // public function kontaks()
+    // {
+    //     $kontaks contact::all();
+    //     return view('partials.navbar',compact('kontaks'));
+    // }
 }

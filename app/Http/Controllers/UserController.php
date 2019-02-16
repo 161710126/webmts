@@ -8,6 +8,7 @@ use App\Artikel;
 use App\Galeri;
 use Hash;
 use Alert;
+use App\contact;
 class UserController extends Controller
 {
     /**
@@ -17,8 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $users = User::all();
-        return view('user.index',compact('users'));
+        return view('user.index',compact('users','countNotif'));
     }
 
     /**
@@ -28,7 +30,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('user.create',compact('countNotif'));
     }
 
     /**
@@ -74,8 +77,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $users = User::findOrFail($id);
-        return view('user.edit', compact('users'));
+        return view('user.edit', compact('users','countNotif'));
     }
 
     /**

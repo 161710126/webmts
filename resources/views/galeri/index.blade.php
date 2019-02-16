@@ -27,7 +27,7 @@
                                 <a href="/home">
                                     <i class="fas fa-home"></i> Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -53,8 +53,7 @@
 				  	  <tr>
 				  	  <td>{{ $no++ }}</td>
 				  	  <td>{{$data->nama}}</td>
-				    	<td><p><a href="" class="thumbnail">
-								<img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 100px; height: 50px;"></p></td>
+				      <td><img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
 				    	<td>{{ $data->Kategorigaleri->nama_kategori}}</td>
 						<td>
 							<a href="{{ route('galeris.edit',$data->id) }}" class="btn btn-outline-primary"><i class="fa fa-pencil-square-o">&nbsp</i>Edit</a>

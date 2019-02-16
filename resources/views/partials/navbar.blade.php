@@ -29,115 +29,39 @@
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="far fa-bell"></i>
-                            <span class="label-count bg-orange"></span>
+                            <span class="badge badge-warning navbar-badge">{{$countNotif}}</span>
                         </a>
                         <ul class="dropdown-menu pullDown">
-                            <li class="header">NOTIFICATIONS</li>
+                            <li class="header">NOTIFICATIONS Komentar Pengunjung</li>
                             <li class="body">
                                 <ul class="menu">
+                                @php
+                                $kontaks = App\contact::orderBy('created_at','desc')->paginate(5);
+                                @endphp
+                            @foreach($kontaks as $data)
+                            @if($data->status == 0)
                                     <li>
-                                        <a href="javascript:void(0);">
+                                        <a href="{{route('notifikasi')}}">
                                             <span class="table-img msg-user">
-                                                <img src="{{asset('assets/admin/assets/images/user/user1.jpg')}}" alt="">
+                                                <img src="{{asset('assets/guest/images/logo1.png')}}" alt="">
                                             </span>
+
                                             <span class="menu-info">
-                                                <span class="menu-title">Sarah Smith</span>
+                                                <span class="menu-title">{{$data->nama}}</span>
                                                 <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                    <i class="material-icons">access_time</i>{{$data->created_at->diffForHumans()}}
                                                 </span>
-                                                <span class="menu-desc">Please check your email.</span>
+                                                <span class="menu-desc">{{$data->email}}</span>
                                             </span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="table-img msg-user">
-                                                <img src="{{asset('assets/admin/assets/images/user/user2.jpg')}}" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Airi Satou</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 22 mins ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="table-img msg-user">
-                                                <img src="{{asset('assets/admin/assets/images/user/user3.jpg')}}" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">John Doe</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="table-img msg-user">
-                                                <img src="{{asset('assets/admin/assets/images/user/user4.jpg')}}" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Ashton Cox</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 2 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="table-img msg-user">
-                                                <img src="{{asset('assets/admin/assets/images/user/user5.jpg')}}" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Cara Stevens</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 4 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="table-img msg-user">
-                                                <img src="{{asset('assets/admin/assets/images/user/user6.jpg')}}" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Charde Marshall</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="table-img msg-user">
-                                                <img src="{{asset('assets/admin/assets/images/user/user7.jpg')}}" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">John Doe</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> Yesterday
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
+                                    @endif
+                                @endforeach
                                 </ul>
                             </li>
-                            <li class="footer">
+                           <!--  <li class="footer">
                                 <a href="javascript:void(0);">View All Notifications</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <!-- #END# Notifications-->

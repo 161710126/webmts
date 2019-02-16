@@ -27,7 +27,7 @@
                                 <a href="/home">
                                     <i class="fas fa-home"></i> Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -46,6 +46,7 @@
 					  <th>Judul</th>
 					  <th>Bulan</th>
 					  <th>Tanggal</th>
+					  <th>Tahun</th>
 					  <th>Jam</th>
 					  <th>Alamat</th>
 					  <th>Deskripsi</th>
@@ -57,10 +58,11 @@
 				  		@foreach($events as $data)
 				  	  <tr>
 				  	  	<td>{{ $no++ }}</td>
-						<td><img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
+						<td><img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 70px; height: 70px;"></td>
 				    	<td>{{ $data->judul}}</td>
 						<td>{{ $data->bulan }}</td>
 						<td>{{ $data->tgl}}</td>
+						<td>{{ $data->tahun}}</td>
 						<td>{{ $data->jam}}</td>
 						<td>{{ $data->alamat}}</td>
 						<td>{!! str_limit($data->deskripsi, 100, '&raquo;') !!}</td>

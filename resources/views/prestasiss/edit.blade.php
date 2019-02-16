@@ -24,7 +24,7 @@
 			  		</div>
 
 	                <div class="form-group {{ $errors->has('tanggal_peroleh') ? ' has-error' : '' }}">
-			  			<label class="control-label">tanggal_peroleh</label>	
+			  			<label class="control-label">Tanggal Peroleh</label>	
 			  			<input type="date" name="tanggal_peroleh" class="form-control" value="{{ $prestasis->tanggal_peroleh }}"  required>
 			  			@if ($errors->has('tanggal_peroleh'))
                             <span class="help-block">
@@ -44,7 +44,7 @@
                     </div>
 
 			  		 <div class="form-group {{ $errors->has('deskripsi') ? ' has-error' : '' }}">
-			  			<label class="control-label">deskripsi</label>	
+			  			<label class="control-label">Deskripsi</label>	
 			  			<input type="text" name="deskripsi" class="form-control" value="{{ $prestasis->deskripsi }}"  required>
 			  			@if ($errors->has('deskripsi'))
                             <span class="help-block">

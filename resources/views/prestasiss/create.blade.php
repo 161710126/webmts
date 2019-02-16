@@ -45,6 +45,7 @@
 				<div class="form-group {{ $errors->has('eskul_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">Kategori Eskul</label>	
 			  			<select name="eskul_id" class="form-control">
+			  			<option>Pilih Kategori</option>
 			  				@foreach($eskuls as $data)
 			  				<option value="{{ $data->id }}">{{ $data->nama }}</option>
 			  				@endforeach

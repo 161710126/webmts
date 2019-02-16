@@ -7,6 +7,7 @@ use App\kategori_fasilitas;
 use File;
 use Auth;
 use Alert;
+use App\contact;
 use Illuminate\Http\Request;
 
 class FasilitasController extends Controller
@@ -18,8 +19,9 @@ class FasilitasController extends Controller
      */
     public function index()
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $fasilitas =fasilitas::with('Kategori_fasilitas')->get();
-        return view('fasilitass.index',compact('fasilitas')); 
+        return view('fasilitass.index',compact('fasilitas','countNotif')); 
     }
 
 
@@ -30,9 +32,11 @@ class FasilitasController extends Controller
      */
     public function create()
     {
+        $countNotif = contact::where('status',0)->get()->count();
          $fasilitas = fasilitas::all();
         $kategfasilitas = kategori_fasilitas::all();
-        return view('fasilitass.create',compact('fasilitas','kategfasilitas'));     }
+        return view('fasilitass.create',compact('fasilitas','kategfasilitas','countNotif')); 
+            }
 
     
 
@@ -46,7 +50,7 @@ class FasilitasController extends Controller
     {
         Alert::success('Data successfully Saved','Good Job')->autoclose(1700);
          $this->validate($request,[
-            'nama' => 'required|max:255',
+            'nama' => 'required|',
             'poto' => 'required|',
              'kategorifasilitas_id' => 'required|'
            
@@ -62,10 +66,10 @@ class FasilitasController extends Controller
             $uploadSuccess= $file->move($destinationPath,$filename);
             $fasilitas->poto= $filename;
         }
-        $fasilitas->kategorifasilitas_id = $request->kategorifasilitas_id;
        
+         $fasilitas->kategorifasilitas_id = $request->kategorifasilitas_id;
         $fasilitas->save();
-        return redirect()->route('fasilitas.index','fasilitas.index1');     
+        return redirect()->route('fasilitas.index');     
   
     }
 
@@ -88,9 +92,10 @@ class FasilitasController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
          $fasilitas = fasilitas::findOrFail($id);
          $kategfasilitas = kategori_fasilitas::all();
-        return view('fasilitass.edit',compact('fasilitas','kategfasilitas'));
+        return view('fasilitass.edit',compact('fasilitas','kategfasilitas','countNotif'));
     }
 
     /**

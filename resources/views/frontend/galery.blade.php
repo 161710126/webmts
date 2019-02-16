@@ -8,7 +8,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Gallery-MTs AL IKHLAS</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/">Home</a>
+                                  <a class="breadcrumb-item" href="/">Beranda</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Gallery</span>
                                 </nav>
@@ -36,7 +36,7 @@
 					<!-- Start Single Gallery -->
 					@foreach($galeriss as $data)
 					<div class="col-lg-3 col-md-4 col-sm-6 col-12 gallery__item web{{$data->Kategorigaleri->id}}">
-						<div class="gallery">
+						<div class="gallery" style="margin-left: 20px;">
 							<div class="gallery__thumb">
 								<a href="#">
 									<img  style="width: 450px; height: 300px;" src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" alt="gallery images">
@@ -45,7 +45,7 @@
 							<div class="gallery__hover__inner">
 								<div class="gallery__hover__action">
 									<ul class="gallery__zoom">
-										<li><a href="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" data-lightbox="grportimg" data-title="{{$data->nama}}"><i class="fa fa-search"></i></a></li>
+										<li><a href="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 850px; height: 800px;" data-lightbox="grportimg" data-title="{{$data->nama}}"><i class="fa fa-search"></i></a></li>
 										
 									</ul>
 								</div>

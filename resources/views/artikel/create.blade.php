@@ -35,9 +35,9 @@
                           </div>
 
 			  		<div class="form-group {{ $errors->has('user_id') ? ' has-error' : '' }}">
-			  			<label class="control-label">Nama User</label>	
+			  			<label class="control-label">Nama Penulis</label>	
 			  			<select name="user_id" class="form-control">
-			  			<option>Pilih Nama User</option>
+			  			<option>Nama Penulis</option>
 			  				@foreach($users as $data)
 			  				<option value="{{ $data->id }}">{{ $data->name }}</option>
 			  				@endforeach
@@ -52,6 +52,7 @@
 			  		 <div class="form-group">
                     <label>Kategori</label>
                      <select class="form-control" name="kategori_id" id="" required>
+                     <option>Pilih Kategori</option>
                         @foreach($kategori as $data)
                         <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
                         @endforeach()

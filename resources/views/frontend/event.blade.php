@@ -9,7 +9,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Event List</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <a class="breadcrumb-item" href="/beranda">Beranda</a>
                                   <!-- <span class="brd-separetor"><img src="images/icons/brad.png" alt="separator images"></span> -->
                                   <span class="breadcrumb-item active">Event List</span>
                                 </nav>
@@ -19,38 +19,7 @@
                 </div>
             </div>
         </div>
-        <!-- End Bradcaump area -->
-		<!-- Start Our Event Area -->
-		<!-- <section class="events-search-filter">
-			<div class="container">
-				<div class="row">
-					<div class="section-content clearfix">
-						<div class="col-sm-6 col-md-3">
-							<label>Keyword</label>
-							<input type="text" placeholder="Type event keyword here"/>
-						</div>
-						<div class="col-sm-6 col-md-3">
-							<label>Date</label>
-							<input type="text" class="datepicker" >
-						</div>
-						<div class="col-sm-6 col-md-3">
-							<label>Event Categories</label>
-							<select class="selectpicker dropdown">
-								<option>Select Categories</option>
-								<option>Academics</option>
-								<option>Sports</option>
-								<option>Music</option>
-								<option>Research</option>
-							</select>
-						</div>
-						<div class="col-sm-6 col-md-3">
-							<label></label>
-							<input class="hvr-push" type="submit" value="Search Event"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
+     
 		<section class="dcare__event__area bg--white section-padding--lg">
 			<div class="container">
 				<div class="row event-grid-page">
@@ -69,10 +38,10 @@
 							<div class="event__content">
 								<div class="event__pub">
 									<div class="event__date">
-										<span class="date">14</span><!-- <span>tgl</span> -->
+										<span class="date">{{$data->tgl}}</span><!-- <span>tgl</span> -->
 									</div>
 									<ul class="event__time">
-										<li>{{ $data->bulan }}, <i class="fa fa-clock-o"></i>{{ $data->jam}}</li>
+										<li>{{ $data->bulan }} {{$data->tahun}}, <i class="fa fa-clock-o"></i>{{ $data->jam}}</li>
 										<li><i class="fa fa-home"></i>{{ $data->alamat}}</li>
 									</ul>
 								</div>

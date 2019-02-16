@@ -15,15 +15,10 @@
                         </div>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
+                        <a href="{{Route('gurus.index')}}">
                             <i class="fa fa-user-plus nav-icon"></i>
                             <span>Data Guru</span>
                         </a>
-                        <ul class="ml-menu">
-                            <li class="active">
-                                <a href="{{Route('gurus.index')}}">Tambah Data Guru</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
@@ -32,26 +27,21 @@
                         </a>
                         <ul class="ml-menu">
                             <li class="active">
-                                <a href="{{Route('artikels.index')}}">Tambah Artikel</a>
+                                <a href="{{Route('artikels.index')}}">Artikel</a>
                             </li>
                             <li class="active">
-                                <a href="{{Route('kategori.index')}}">Tambah Kategori Artikel</a>
+                                <a href="{{Route('kategori.index')}}">Kategori Artikel</a>
                             </li>
                             <li class="active">
-                                <a href="{{Route('users.index')}}">Tambah Penulis Artikel</a>
+                                <a href="{{Route('users.index')}}">Penulis Artikel</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
+                        <a href="{{Route('events.index')}}">
                             <i class="fab fa-google-play"></i>
                             <span>Data Agenda</span>
                         </a>
-                        <ul class="ml-menu">
-                            <li class="active">
-                                <a href="{{Route('events.index')}}">Tambah Event</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
@@ -60,10 +50,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li class="active">
-                                <a href="{{Route('kategoris.index')}}">Tambah Kategori Gallery</a>
+                                <a href="{{Route('kategoris.index')}}">Kategori Gallery</a>
                             </li>
                             <li class="active">
-                                <a href="{{Route('galeris.index')}}">Tambah Gallery</a>
+                                <a href="{{Route('galeris.index')}}">Gallery</a>
                             </li>
                         </ul>
                     </li>
@@ -74,10 +64,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li class="active">
-                                <a href="{{Route('eskuls.index')}}">Tambah Data Eskul</a>
+                                <a href="{{Route('eskuls.index')}}">Eskul</a>
                             </li>
                             <li class="active">
-                                <a href="{{Route('prestasis.index')}}">Tambah Data Prestasi</a>
+                                <a href="{{Route('prestasis.index')}}">Prestasi</a>
                             </li>
                         </ul>
                     </li>
@@ -88,49 +78,26 @@
                         </a>
                         <ul class="ml-menu">
                             <li class="active">
-                                <a href="{{Route('kategorisfasilitas.index')}}">Tambah Kategori Fasilitas</a>
+                                <a href="{{Route('kategorisfasilitas.index')}}">Kategori Fasilitas</a>
                             </li>
                             <li class="active">
-                                <a href="{{Route('fasilitas.index')}}">Tambah Fasilitas</a>
+                                <a href="{{Route('fasilitas.index')}}">Fasilitas</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
+                        <a href="{{Route('testimonis.index')}}">
                             <i class="fa fa-users"></i>
                             <span>Data Testimoni</span>
                         </a>
-                        <ul class="ml-menu">
-                            <li class="active">
-                                <a href="{{Route('testimonis.index')}}">Tambah Data Testimoni</a>
-                            </li>
-                        </ul>
                     </li>
+                    
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="fa fa-phone"></i>
-                            <span>Komentar Pengunjung</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li class="active">
-                                <a href="{{Route('kontaks.index')}}">Tanggapan Pengujung</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
+                        <a href="{{Route('infos.index')}}">
                             <i class="fas fa-globe-americas"></i>
-                            <span>Maps</span>
+                            <span>Info Sekilas</span>
                         </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="pages/maps/google.html">Google Map</a>
-                            </li>
-                            <li>
-                                <a href="pages/maps/jqvmap.html">Vector Map</a>
-                            </li>
-                        </ul>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
             <!-- #Menu -->

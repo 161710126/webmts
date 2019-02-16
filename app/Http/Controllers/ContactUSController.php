@@ -35,7 +35,7 @@ return view('contactUS');
        ), function($message)
    {
        $message->from('saquib.gt@gmail.com');
-       $message->to('mjunikaberli010601@gmail.com', 'Admin')->subject('Cloudways Feedback');
+       $message->to('mjunikaberli010601@gmail.com', 'Admin')->subject('Pesan dan Kesan');
 
    });
  

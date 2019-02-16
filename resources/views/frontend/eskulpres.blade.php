@@ -9,7 +9,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Ekstrakurikuler</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/">Home</a>
+                                  <a class="breadcrumb-item" href="/">Beranda</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Ekstrakurikuler</span>
                                 </nav>
@@ -49,16 +49,6 @@
 			</div>
 			</div>
 			<br>
-			<!-- <section class="academics-hero">
-			<div class="container">
-				<div class="hero-content">						
-					<div class="hero-caption">
-						<h2>Prestasi Siswa-Siswi MTs AL IKHLAS</h2>
-						<a href="#" class="hvr-push">Download as PDF</a>
-					</div>
-				</div>
-			</div>
-		</section> -->
 			<div class="ht__bradcaump__area">
             <div class="ht__bradcaump__container">
              <!--  <img src="{{asset('assets/baru/images/bg-png/6.png')}}" alt="bradcaump images"> -->
@@ -68,7 +58,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Prestasi Siswa/i MTs AL IKHLAS</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/beranda">Home</a>
+                                  <a class="breadcrumb-item" href="/beranda">Beranda</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Prestasi</span>
                                 </nav>
@@ -78,38 +68,7 @@
                 </div>
             </div>
         </div>
-		
-		<!-- <section class="events-search-filter">
-			<div class="container">
-				<div class="row">
-					<div class="section-content clearfix">
-						<div class="col-sm-6 col-md-3">
-							<label>Keyword</label>
-							<input type="text" placeholder="Type event keyword here"/>
-						</div>
-						<div class="col-sm-6 col-md-3">
-							<label>Date</label>
-							<input type="text" class="datepicker" >
-						</div>
-						<div class="col-sm-6 col-md-3">
-							<label>Event Categories</label>
-							<select class="selectpicker dropdown">
-								<option>Select Categories</option>
-								<option>Academics</option>
-								<option>Sports</option>
-								<option>Music</option>
-								<option>Research</option>
-							</select>
-						</div>
-						<div class="col-sm-6 col-md-3">
-							<label></label>
-							<input class="hvr-push" type="submit" value="Search Event"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
-		
+        
 		<section class="events-list">
 			<div class="container">
 				<div class="row">

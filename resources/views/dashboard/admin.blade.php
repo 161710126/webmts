@@ -22,11 +22,15 @@
             <div class="panel-heading">ASSALAMUALIKUM WR.WB</div>
             Selamat datang di admin<br>
             <!-- Widgets -->
+           <!--  @php
+        $infos = App\infosekilas::paginate(3);
+        @endphp
             <div class="row">
+            @foreach($infos as $data)
                 <div class="col-lg-3 col-sm-6">
                     <div class="counter-box text-center white">
-                        <div class="text font-17 m-b-5">Total Income</div>
-                        <h3 class="m-b-10">$758
+                        <div class="text font-17 m-b-5">{{$data->nama}}</div>
+                        <h3 class="m-b-10">{{$data->jumlah}} 
                             <i class="material-icons col-green">trending_up</i>
                         </h3>
                         <div class="icon">
@@ -34,42 +38,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+                @endforeach -->
+                <!-- <div class="col-lg-3 col-sm-6">
                     <div class="counter-box text-center white">
-                        <div class="text font-17 m-b-5">Orders Received</div>
-                        <h3 class="m-b-10">1025
-                            <i class="material-icons col-red">trending_down</i>
-                        </h3>
-                        <div class="icon">
-                            <span class="chart chart-line"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="counter-box text-center white">
-                        <div class="text font-17 m-b-5">Total Sales</div>
-                        <h3 class="m-b-10">956
-                            <i class="material-icons col-green">trending_up</i>
-                        </h3>
-                        <div class="icon">
-                            <div class="chart chart-pie"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="counter-box text-center white">
-                        <div class="text font-17 m-b-5">Total Active Users</div>
-                        <h3 class="m-b-10">214
+                        <div class="text font-17 m-b-5">Jumlah Guru</div>
+                        <h3 class="m-b-10">24 orang
                             <i class="material-icons col-red">trending_down</i>
                         </h3>
                         <div class="icon">
                             <div class="chart" id="liveChart">Loading..</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- #END# Widgets -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="header">
@@ -107,9 +90,9 @@
                                         <span>services</span>
                                     </div>
                                 </div>
-                                <!-- Canvas for Chart.js -->
+                               
                                 <canvas id="chartReport1"></canvas>
-                                <!-- Custom Axis -->
+                                
                                 <div class="axisData">
                                     <div class="tick">
                                         MON <span class="value productValue">24</span> <span class="value serviceValue">20</span>
@@ -174,13 +157,13 @@
                                         <span>services</span>
                                     </div>
                                 </div>
-                                <!-- Canvas for Chart.js -->
+                                
                                 <canvas id="chartReport2"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row clearfix">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="box-part text-center">
@@ -189,11 +172,9 @@
                             <h3>Twitter</h3>
                         </div>
                         <div class="text p-b-10">
-                            <span>Lorem ipsum dolor sit amet, id quo eruditi
-                                eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui
-                                ad.</span>
+                            <span>Silakan gabung dengan kami di twitter.</span>
                         </div>
-                        <a href="#">Learn More</a>
+                        <a target="_blank" href="https://twitter.com/MtsKeban">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -203,11 +184,9 @@
                             <h3>Instagram</h3>
                         </div>
                         <div class="text p-b-10">
-                            <span>Lorem ipsum dolor sit amet, id quo eruditi
-                                eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui
-                                ad.</span>
+                            <span>Silakan gabung dengan kami di instagram.</span>
                         </div>
-                        <a href="#">Learn More</a>
+                        <a target="_blank" href="https://www.instagram.com/wargamtsalikhlaskeban2/">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -217,11 +196,9 @@
                             <h3>Facebook</h3>
                         </div>
                         <div class="text p-b-10">
-                            <span>Lorem ipsum dolor sit amet, id quo eruditi
-                                eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui
-                                ad.</span>
+                            <span>Silakan gabung dengan kami di facebook.</span>
                         </div>
-                        <a href="#">Learn More</a>
+                        <a target="_blank" href="https://www.facebook.com/mtsalikhlas.kebanii">Learn More</a>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ use File;
 use Auth;
 use Alert;
 use App\Kategorigaleri;
+use App\contact;
 use Illuminate\Http\Request;
 
 class GaleryController extends Controller
@@ -20,9 +21,10 @@ class GaleryController extends Controller
     public function index()
     {
        // $galeriss =galeri::all();
-       //  return view('galeri.index',compact('galeriss')); 
+       //  return view('galeri.index',compact('galeriss'));
+       $countNotif = contact::where('status',0)->get()->count(); 
          $galeriss =galeri::with('Kategorigaleri')->get();
-        return view('galeri.index',compact('galeriss')); 
+        return view('galeri.index',compact('galeriss','countNotif')); 
     }
     //  public function index1()
     // {
@@ -38,9 +40,10 @@ class GaleryController extends Controller
     public function create()
     {
         // $galeris = kategori_galeri::all();
+        $countNotif = contact::where('status',0)->get()->count();
         $galeriss = galeri::all();
         $kategori = Kategorigaleri::all();
-        return view('galeri.create',compact('kategori','galeriss')); 
+        return view('galeri.create',compact('kategori','galeriss','countNotif')); 
             }
 
     
@@ -98,9 +101,10 @@ class GaleryController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
          $galeriss = galeri::findOrFail($id);
          $kategori = Kategorigaleri::all();
-        return view('galeri.edit',compact('galeriss','kategori'));   
+        return view('galeri.edit',compact('galeriss','kategori','countNotif'));   
 
     }
 

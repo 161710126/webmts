@@ -22,11 +22,11 @@
 
 			  <label for="cc-payment" class="control-label mb-1">Foto</label>
                                 <input name="poto" type="file" required>
-                            </div>
-
-			<div class="form-group {{ $errors->has('kategorifasilitas_id') ? ' has-error' : '' }}">
-			  			<label class="control-label">Nama Kategori</label>	
+                         
+	 <div class="form-group {{ $errors->has('kategorifasilitas_id') ? ' has-error' : '' }}">
+			  			<br><label class="control-label">Nama Kategori</label>	
 			  			<select name="kategorifasilitas_id" class="form-control">
+			  			<option>Pilih Kategori</option>
 			  				@foreach($kategfasilitas as $data)
 			  				<option value="{{ $data->id }}">{{ $data->nama_fasilitas }}</option>
 			  				@endforeach
@@ -36,6 +36,7 @@
                                 <strong>{{ $errors->first('kategorifasilitas_id') }}</strong>
                             </span>
                         @endif
+			  		</div>
 			  		</div>
 
 				<div class="from-group">

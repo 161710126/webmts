@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // use Alert;
 use Validator;
 use Alert;
+use App\contact;
 class KategoriController extends Controller
 {
     /**
@@ -16,9 +17,10 @@ class KategoriController extends Controller
      */
     public function index()
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $kategori = Kategori::all();
         // dd($kategori);
-        return view('kategori.index', compact('kategori'));
+        return view('kategori.index', compact('kategori','countNotif'));
     }
 
     /**
@@ -28,7 +30,8 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('kategori.create');
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('kategori.create',compact('countNotif'));
     }
 
     /**
@@ -86,8 +89,9 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $kategori = Kategori::findOrFail($id);
-        return view('kategori.edit', compact('kategori'));
+        return view('kategori.edit', compact('kategori','countNotif'));
     }
 
     /**

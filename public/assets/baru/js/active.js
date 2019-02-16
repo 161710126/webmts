@@ -159,7 +159,7 @@
   $(".testimonial__slide--3").owlCarousel({
     loop: true,
     nav: true,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 3000,
     items: 1,
     dots: false,

@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('judul');
             $table->string('bulan');
             $table->Integer('tgl');
+            $table->Integer('tahun');
             $table->string('jam');
             $table->string('alamat');
             $table->text('deskripsi');

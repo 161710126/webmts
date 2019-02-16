@@ -11,7 +11,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Fasilitas-MTs AL IKHLAS</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/">Home</a>
+                                  <a class="breadcrumb-item" href="/">Beranda</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Fasilitas</span>
                                 </nav>
@@ -48,7 +48,7 @@
               <div class="gallery__hover__inner">
                 <div class="gallery__hover__action">
                   <ul class="gallery__zoom">
-                    <li><a href="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" data-lightbox="grportimg" data-title="{{$data->nama}}"><i class="fa fa-search"></i></a></li>
+                    <li><a href="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 850px; height: 800px;" data-lightbox="grportimg" data-title="{{$data->nama}}"><i class="fa fa-search"></i></a></li>
                     
                   </ul>
                 </div>

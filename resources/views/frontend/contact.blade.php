@@ -9,7 +9,7 @@
                             <div class="bradcaump__inner text-center">
                                 <h2 class="bradcaump-title">Silakan Hubungi Kami</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="/">Home</a>
+                                  <a class="breadcrumb-item" href="/">Beranda</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
                                   <span class="breadcrumb-item active">Kontak Informasi</span>
                                 </nav>
@@ -24,7 +24,6 @@
 			<div class="container">
 				<div class="section-content clearfix">
 					<h3>Kirim Pesan</h3>
-					
 @if(Session::has('success'))
    <div class="alert alert-success">
      {{ Session::get('success') }}
@@ -67,13 +66,10 @@
 <span class="text-danger">{{ $errors->first('message') }}</span>
 </div>
 </div>
-
 <div class="form-group">
 <button class="btn btn-warning">Kirim</button>
 </div>
-
 {!! Form::close() !!}
-
 				</div>
 			</div>
 		</section>
@@ -107,12 +103,12 @@
 		</section>
 		<br><br><br>
 
-		<section class="contact-form">
+		<!-- <section class="contact-form">
 		<center><h2>Maps Zoom</h2></center><br>
 			<div class="container">
 			 <iframe src="https://www.google.com/maps/embed?pb=!4v1538731042398!6m8!1m7!1sIGyEbTeZ8fjX_ztad0j9NA!2m2!1d-2.719216632611727!2d103.4926186716606!3f181.08717533472128!4f-3.4272152749862954!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
-		</section>
+		</section> -->
 		<br><br>
 @endsection
 

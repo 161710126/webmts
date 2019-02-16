@@ -35,7 +35,7 @@
 
 
 			  		 <div class="form-group {{ $errors->has('content') ? ' has-error' : '' }}">
-			  			<label class="control-label">content</label>	
+			  			<label class="control-label">Deskripsi</label>	
 			  			<input type="text" name="content" class="form-control" value="{{ $eskuls->content }}"  required>
 			  			@if ($errors->has('content'))
                             <span class="help-block">

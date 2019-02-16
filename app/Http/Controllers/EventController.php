@@ -6,7 +6,7 @@ use App\Event;
 use File;
 use Alert;
 use Illuminate\Http\Request;
-
+use App\contact;
 class EventController extends Controller
 {
     /**
@@ -17,7 +17,8 @@ class EventController extends Controller
     public function index()
     {
          $events = Event::all();
-        return view('event.index',compact('events') ); 
+         $countNotif = contact::where('status',0)->get()->count();
+        return view('event.index',compact('events','countNotif')); 
     }
 
     /**
@@ -27,7 +28,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('event.create');
+        $countNotif = contact::where('status',0)->get()->count();
+        return view('event.create',compact('countNotif'));
     }
 
     /**
@@ -41,9 +43,10 @@ class EventController extends Controller
         Alert::success('Data Successfully Saved', 'Good Job!')->autoclose(1700);
          $this->validate($request,[
             'poto' => 'required|',
-            'judul' => 'required|max:255',
+            'judul' => 'required|unique:events|',
             'bulan' => 'required|min:2',
             'tgl' => 'required|min:2',
+            'tahun' => 'required|min:2',
             'jam' => 'required|min:2',
             'alamat' => 'required|min:2',
             'deskripsi' => 'required|'
@@ -62,6 +65,7 @@ class EventController extends Controller
         $events->judul = $request->judul;
         $events->bulan = $request->bulan;
         $events->tgl = $request->tgl;
+        $events->tahun = $request->tahun;
         $events->jam = $request->jam;
         $events->alamat = $request->alamat;
         $events->deskripsi = $request->deskripsi;
@@ -103,8 +107,9 @@ class EventController extends Controller
      */
     public function edit($id)
     {
+        $countNotif = contact::where('status',0)->get()->count();
         $events = Event::findOrFail($id);
-        return view('event.edit',compact('events')); 
+        return view('event.edit',compact('events','countNotif')); 
     }
 
     /**
@@ -122,6 +127,7 @@ class EventController extends Controller
              'judul' => 'required|max:255',
              'bulan' => 'required|max:255',
              'tgl' => 'required|max:255',
+             'tahun' => 'required|max:255',
              'jam' => 'required|max:255',
              'alamat' => 'required|max:255',
             'deskripsi' => 'required|'
@@ -153,6 +159,7 @@ class EventController extends Controller
         $events->judul = $request->judul;
         $events->bulan = $request->bulan;
         $events->tgl = $request->tgl;
+        $events->tahun = $request->tahun;
         $events->jam = $request->jam;
         $events->alamat = $request->alamat;
         $events->deskripsi = $request->deskripsi;
