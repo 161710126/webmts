@@ -58,7 +58,7 @@ Route::get('/fasilitas','FrontendController@fasilitas')->name('fasilitas');
 Route::get('/berita','FrontendController@artikel');
 Route::get('/berita/{artikels}','FrontendController@show')->name('berita');
 Route::get('berita/kategori/{kategori}', 'FrontendController@artikelkategori');
-Route::get('/about','FrontendController@Testimoni')->name('Testimoni');
+// Route::get('/about','FrontendController@Testimoni')->name('Testimoni');
 // Route::get('/galeri/kategori/{kategorigaleri}', 'FrontendController@kategorigaleri');
 Route::get('/event','FrontendController@event');
 Route::get('/event/{events}','FrontendController@showevent')->name('event');
@@ -67,4 +67,16 @@ Route::get('/event/{events}','FrontendController@showevent')->name('event');
 
 Route::get('/contact', function () {
     return view('frontend.contact');
+});
+Route::get('/persyaratan', function () {
+    return view('frontend.syarat');
+});
+Route::get('/sambutan', function () {
+    return view('frontend.sambutan');
+});
+Route::get('/sejarah', function () {
+    return view('frontend.sejarah');
+});
+Route::get('/visi-misi', function () {
+    return view('frontend.visi-misi');
 });

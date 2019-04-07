@@ -12,10 +12,10 @@
 										<!-- <h6><span class="color-pink">He</span><span class="secondary-color">llo</span> Kidz <span class="separator">,</span></h6> -->
 										<!-- <h1 style="color: black;">PPDB MTs AL IKHLAS</h1>
 										<p style="color: black; font-size: 20px">MTs AL IKHLAS menerima pendaftaran siswa/i baru .....</p> -->
-										<!-- <center><div class="slider__btn">
-											<a style="margin-right: 140px;" class="dcare__btn btn__org max__height-btn hover--theme" href="#">Daftar Sekarang</a>
+										<center><div class="slider__btn">
+											<a style="margin-right: 140px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/persyaratan">Persyaratan</a>
 										</div>
-										</center> -->
+										</center>
 									</div>
 								</div>
 								<!-- End Single Slide -->
@@ -105,12 +105,61 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 					</div>
 				</div>
 			</div>
-		</section>
+		</section><br>
 
 		@php
-		$artikels = App\Artikel::orderBy('created_at','desc')->paginate(4);
+		$artikels = App\Artikel::orderBy('created_at','desc')->paginate(3);
 		@endphp
-		<section class="featured-news">
+		<section class="jnr__blog_area section-padding--lg bg-image--3">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-sm-12 col-md-12">
+						<div class="section__title text-center white--title">
+							<h2 class="title__line">Berita Terbaru</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunte magna aliquaet, consectetempora incidunt</p>
+						</div>
+					</div>
+				</div>
+				<div class="row blog__wrapper mt--40">
+				@if (count($artikels) > 0)
+					@foreach($artikels as $data)
+					@if($data->status == 0)
+                     @else
+					<!-- Start Single Blog -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<article class="blog">
+							<div class="blog__date">
+								<span>Date : {{ date('M j, Y', strtotime($data->created_at)) }}</span>
+							</div>
+							<div class="blog__thumb">
+								<a href="/berita/{{$data->slug}}">
+									<img src="{{ asset ('assets/img/gambarweb/'.$data->gambar) }}" style="width: 500px; height: 300px;" alt="blog images">
+								</a>
+							</div>
+							<div class="blog__inner">
+								<span>Post By : {{ $data->user->name}}</span>
+								<h4><a href="/berita/{{$data->slug}}">{!! str_limit($data->judul, 55, '&raquo;') !!}</a></h4>
+								<p>{!! str_limit($data->content,100) !!}.</p>
+								<!-- <ul class="blog__meta d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
+									<li><a href="#">Comments : 05</a></li>
+									<li><a href="#">Like : 07</a></li>
+								</ul> -->
+							</div>
+						</article>
+					</div>
+					<!-- End Single Blog -->
+					    @endif
+						@endforeach
+						@else
+                            <center><h3><b><i>Maaf Tidak ada Berita yang ditemukan</i></b></h3></center><br>
+                        @endif
+                             <a style="margin-left: 450px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/berita">Lihat Semua Berita & Artikel Kami</a>
+				</div>
+			</div>
+		</section>
+
+		
+		<!-- <section class="featured-news">
 			<div class="container">
 				<div class="row">
 					<div class="section__title--2">
@@ -136,7 +185,7 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 								</div>
 								<div class="item-image">
 									<a href="/berita/{{$data->slug}}">
-										<img src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" style="width: 300px; height: 300px;" alt="image">
+										<img src="{{ asset ('assets/img/gambarweb/'.$data->gambar) }}" style="width: 500px; height: 300px;" alt="image">
 									</a>
 								</div>
 								<div class="item-info">
@@ -155,12 +204,12 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 					  <a style="margin-left: 450px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/berita">Lihat Semua Berita & Artikel Kami</a>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		
 		@php
-		$events = App\Event::orderBy('created_at','desc')->paginate(3);
+		$events = App\Event::orderBy('created_at','desc')->paginate(2);
 		@endphp
-		<section class="dcare__event__area bg--white section-padding--lg">
+		<!-- <section class="dcare__event__area bg--white section-padding--lg">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -170,7 +219,7 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 					</div>
 				</div>
 				<div class="row mt--40">
-					<!-- Start Single Event -->
+					
 					@if (count($events) > 0)
 					@foreach($events as $data)
 					 @if($data->status == 0)
@@ -211,7 +260,57 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 					@endif
 				</div>
 					<br><br><a style="margin-left: 450px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/event">Lihat Semua Agenda Sekolah</a>
-					<!-- end Single Event -->
+					
+			</div>
+		</section> -->
+
+		<section class="dcare__event__area bg-image--14 section-padding--lg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-sm-12 col-md-12">
+						<div class="section__title text-center white--title">
+							<h2 class="title__line">Acara sekolah</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunte magna aliquaet, consectetempora incidunt</p>
+						</div>
+					</div>
+				</div>
+				<div class="row mt--50">
+				@if (count($events) > 0)
+					@foreach($events as $data)
+					 @if($data->status == 0)
+                     @else
+					<!-- Start Single Event -->
+					<div class="col-lg-6 col-md-12 col-sm-12">
+						<div class="dcare__event__wrapper">
+							<!-- Start Event -->
+							<div class="single__event d-flex">
+								<div class="event__thumb">
+									<a href="/event/{{$data->slug}}">
+										<img src="{{ asset ('assets/img/gambarweb/'.$data->poto) }}" style="width: 300px; height: 200px;" alt="event images">
+									</a>
+									<div class="event__hover__info">
+										<span>{{$data->tgl}},{{$data->bulan}} {{$data->tahun}}</span>
+									</div>
+								</div>
+								<div class="event__inner">
+									<h6><a href="/event/{{$data->slug}}">{!! str_limit($data->judul, 35, '&raquo;') !!}</a></h6>
+									<ul class="event__time__location">
+										<li><i class="fa fa-home"></i>{{$data->alamat}}</li>
+										<li><i class="fa fa-clock-o"></i>{{$data->jam}}</li>
+									</ul>
+								</div>
+							</div>
+							<!-- End Event -->
+						</div>
+					</div>
+				@endif
+					@endforeach
+					@else
+					<center><h3><b><i>Maaf Tidak ada Event yang ditemukan</i></b></h3></center>
+					@endif
+					<!-- End Single Event -->
+					</div>
+					<br><a style="margin-left: 450px;" class="dcare__btn btn__org max__height-btn hover--theme" href="/event">Lihat Semua Agenda Sekolah</a>
 			</div>
 		</section>
 
@@ -244,7 +343,7 @@ Mudah mudahan dengan metode seperti ini dapat memperkecil angka putus sekolah di
 	@php
     $testimonis = App\Testimoni::all();
     @endphp
-		<section class="dcare__testimonial__area section-padding--lg bg-image--23">
+		<section class="dcare__testimonial__area section-padding--lg bg-image--13">
     	<center><h1 style="color: white;">Testimoni Alumni</h1></center>
 			<div class="container">
 				<div class="row">

@@ -39,7 +39,7 @@
                                 <article class="blog__single blog__item">
                                     <div class="blog__thumb sticky">
                                         <a href="/berita/{{$data->slug}}">
-                                            <img class="img-responsive" src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" alt="blog images">
+                                            <img class="img-responsive" src="{{ asset ('assets/img/gambarweb/'.$data->gambar) }}" alt="blog images">
                                         </a>
                                     </div>
                                     <div class="blog__content">

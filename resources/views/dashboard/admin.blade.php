@@ -22,7 +22,7 @@
             <div class="panel-heading">ASSALAMUALIKUM WR.WB</div>
             Selamat datang di admin<br>
             <!-- Widgets -->
-           <!--  @php
+            @php
         $infos = App\infosekilas::paginate(3);
         @endphp
             <div class="row">
@@ -38,8 +38,8 @@
                         </div>
                     </div>
                 </div>
-                @endforeach -->
-                <!-- <div class="col-lg-3 col-sm-6">
+                @endforeach
+                <div class="col-lg-3 col-sm-6">
                     <div class="counter-box text-center white">
                         <div class="text font-17 m-b-5">Jumlah Guru</div>
                         <h3 class="m-b-10">24 orang
@@ -49,10 +49,10 @@
                             <div class="chart" id="liveChart">Loading..</div>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
             <!-- #END# Widgets -->
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="header">
@@ -163,7 +163,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="row clearfix">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="box-part text-center">

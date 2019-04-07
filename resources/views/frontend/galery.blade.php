@@ -10,7 +10,7 @@
                                 <nav class="bradcaump-inner">
                                   <a class="breadcrumb-item" href="/">Beranda</a>
                                   <span class="brd-separetor"><img src="{{asset('assets/baru/images/icons/brad.png')}}" alt="separator images"></span>
-                                  <span class="breadcrumb-item active">Gallery</span>
+                                  <span class="breadcrumb-item active">Galeri</span>
                                 </nav>
                             </div>
                         </div>

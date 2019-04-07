@@ -63,7 +63,7 @@ class ArtikelController extends Controller
         $artikels->content = $request->content;
         if ($request->hasFile('gambar')){
             $file=$request->file('gambar');
-            $destinationPath=public_path().'/assets/img/gambargaleri/';
+            $destinationPath=public_path().'/assets/img/gambarweb/';
             $filename=str_random(6).'_'.$file->getClientOriginalName();
             $uploadSuccess= $file->move($destinationPath,$filename);
             $artikels->gambar= $filename;
@@ -143,14 +143,14 @@ class ArtikelController extends Controller
        
           if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
-            $destinationPath = public_path().'/assets/img/gambargaleri/';
+            $destinationPath = public_path().'/assets/img/gambarweb/';
             $filename = str_random(6).'_'.$file->getClientOriginalName();
             $uploadSuccess = $file->move($destinationPath, $filename);
     
         // hapus gambar lama, jika ada
         // if ($artikels->gambar) {
         // $old_gambar = $artikels->gambar;
-        // $filepath = public_path() . DIRECTORY_SEPARATOR . '/assets/img/gambargaleri'
+        // $filepath = public_path() . DIRECTORY_SEPARATOR . '/assets/img/gambarweb'
         // . DIRECTORY_SEPARATOR . $artikels->gambar;
         //     try {
         //     File::delete($filepath);
@@ -181,7 +181,7 @@ class ArtikelController extends Controller
 
          // if ($artikels->gambar) {
          //    $old_gambar = $artikels->gambar;
-         //    $filepath = public_path() . DIRECTORY_SEPARATOR . 'assets/img/gambargaleri/'
+         //    $filepath = public_path() . DIRECTORY_SEPARATOR . 'assets/img/gambarweb/'
          //    . DIRECTORY_SEPARATOR . $artikels->gambar;
          //    try {
          //    File::delete($filepath);

@@ -51,7 +51,7 @@
 								</div>
 								<ul class="event__btn">
 									<!-- <li><a href="#">Book Now</a></li> -->
-									<li><a href="/event/{{$data->slug}}">Learn More</a></li>
+									<li><a href="/event/{{$data->slug}}">Selengkapnya</a></li>
 								</ul>
 							</div>
 						</div>

@@ -71,12 +71,14 @@
 			</div>
 		</footer> -->
 		<footer id="colophon" class="site-footer">
+		<div class="footer__wrapper poss-relative ftr__btm__image section-padding--lg bg--white">
+		</div>
 			<div class="copyright">
 				<div class="container">
 					<div class="row align-items-center copyright__wrapper">
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="coppy__right__inner">
-								<a href="/"><center><p style="margin-left: 300px;">Copyright 2019 | Admin MTs AL IKHLAS</p></center></a>
+								<a href="/"><center><p>Copyright 2019 | Admin MTs AL IKHLAS</p></center></a>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-12">

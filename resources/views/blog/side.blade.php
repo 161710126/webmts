@@ -39,7 +39,7 @@
                                                                         @if($data->status == 0)
                                                                         @else
 									<li>
-										<a href="/berita/{{ $data->slug }}"><img class="img-circle" src="{{ asset ('assets/img/gambargaleri/'.$data->gambar) }}" alt=""></a>
+										<a href="/berita/{{ $data->slug }}"><img class="img-circle" src="{{ asset ('assets/img/gambarweb/'.$data->gambar) }}" alt=""></a>
 										<div class="post__content">
 											<h6><a href="/berita/{{ $data->slug }}">{{$data->judul}}</a></h6>
 											<span class="date"><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($data->created_at)) }}</span>

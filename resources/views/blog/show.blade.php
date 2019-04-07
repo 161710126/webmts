@@ -28,7 +28,7 @@
         				<div class="page__blog__details">
         					<article class="dacre__blog__details">
         						<div class="blog__thumb">
-        							<img src="{{ asset ('assets/img/gambargaleri/'.$artikels->gambar) }}" style="width: 850px; height: 800px;" alt="blog images">
+        							<img src="{{ asset ('assets/img/gambarweb/'.$artikels->gambar) }}" style="width: 800px; height: 600px;" alt="blog images">
         						</div>
         						<div class="blog__inner">
         							<h2>{{ $artikels->judul}}</h2>
